@@ -1,7 +1,7 @@
 import { load } from "cheerio";
+import type { AnyNode, Element } from "domhandler";
 import hljs, { type HighlightResult } from "highlight.js";
 import { createElement, Fragment, type ReactNode } from "react";
-import type { AnyNode, Element } from "domhandler";
 
 const nodesToReact = (nodes: AnyNode[], keyPrefix: string): ReactNode[] =>
   nodes

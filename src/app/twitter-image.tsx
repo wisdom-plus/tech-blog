@@ -1,21 +1,13 @@
+import { getOgLogo } from "lib/og-logo";
 import { ImageResponse } from "next/og";
-import Image from "next/image";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 export const revalidate = 10;
 export const size = { width: 1200, height: 600 };
 export const alt = "About Acme";
 export const contentType = "image/png";
 
-const srcUrl = (url: string) => {
-  if (process.env.NODE_ENV === "production") {
-    return `https://techamply.com/${url}`;
-  } else {
-    return `http://localhost:3000/${url}`;
-  }
-};
-
-const twitterImage = () => {
+const twitterImage = async () => {
   return new ImageResponse(
     <div
       style={{
@@ -30,7 +22,8 @@ const twitterImage = () => {
         fontWeight: 600,
       }}
     >
-      <Image src={srcUrl("logo.png")} height={400} width={400} alt="logo" />
+      {/* biome-ignore lint/performance/noImgElement: ImageResponse renders this into a PNG. */}
+      <img src={await getOgLogo()} height={400} width={400} alt="logo" />
       Tech Amply
     </div>,
     {

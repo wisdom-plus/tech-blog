@@ -1,23 +1,16 @@
+import { getOgLogo } from "lib/og-logo";
 import { ImageResponse } from "next/og";
-import Image from "next/image";
 import { getBlog } from "@/api/microcms";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 export const revalidate = 10;
 export const size = { width: 1200, height: 600 };
 export const alt = "About Acme";
 export const contentType = "image/png";
 
-const srcUrl = (url: string) => {
-  if (process.env.NODE_ENV === "production") {
-    return `https://techamply.com/${url}`;
-  } else {
-    return `http://localhost:3000/${url}`;
-  }
-};
-
-const og = async ({ params }: { params: { id: string } }) => {
-  const data = await getBlog(params.id);
+const og = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
+  const data = await getBlog(id);
   if (data) {
     return new ImageResponse(
       <div
@@ -33,7 +26,8 @@ const og = async ({ params }: { params: { id: string } }) => {
           fontWeight: 600,
         }}
       >
-        <Image src={srcUrl("logo.png")} height={380} width={380} alt="logo" />
+        {/* biome-ignore lint/performance/noImgElement: ImageResponse renders this into a PNG. */}
+        <img src={await getOgLogo()} height={380} width={380} alt="logo" />
         <h1 style={{ margin: "10px" }}>Tech Amply</h1>
         <h1 style={{ margin: "1px" }}>{data ? data.title : "No Title"}</h1>
       </div>,

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useSearchParams, usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { PER_PAGE } from "@/constants";
 
 const Pagination = ({ count }: { count: number }) => {

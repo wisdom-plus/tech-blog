@@ -1,13 +1,13 @@
 "use client";
 import {
-  TwitterShareButton,
-  TwitterIcon,
-  FacebookShareButton,
-  FacebookIcon,
-  HatenaShareButton,
-  HatenaIcon,
-  EmailShareButton,
   EmailIcon,
+  EmailShareButton,
+  FacebookIcon,
+  FacebookShareButton,
+  HatenaIcon,
+  HatenaShareButton,
+  TwitterIcon,
+  TwitterShareButton,
 } from "next-share";
 
 const ShareButton = ({ data }: { data: { title: string; id: string } }) => {

@@ -1,6 +1,6 @@
-import { PER_PAGE, OFFSET } from "@/constants/index";
-import type { Article, Tag } from "@/types/index";
 import { client } from "lib/client";
+import { OFFSET, PER_PAGE } from "@/constants/index";
+import type { Article, Tag } from "@/types/index";
 
 type getBlogListProps = {
   offset?: number;

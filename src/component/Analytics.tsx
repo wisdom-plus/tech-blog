@@ -1,9 +1,9 @@
 "use client";
 
+import { GA_ID, pageview } from "lib/gtag";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
-import { Suspense, useEffect, type JSX } from "react";
-import { GA_ID, pageview } from "lib/gtag";
+import { type JSX, Suspense, useEffect } from "react";
 
 const GoogleAnalytics = () => {
   const pathname = usePathname();

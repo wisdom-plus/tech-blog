@@ -39,12 +39,10 @@ npm install
 API_KEY=your_microcms_api_key
 NEXT_PUBLIC_GA_TRACKING_ID=your_ga_id
 NEXT_PUBLIC_SITE_DOMAIN=http://localhost:3000
-NEXT_PUBLIC_SITE_DOMIN=http://localhost:3000
 ```
 
 `API_KEY` は microCMS の API キーです。  
-`NEXT_PUBLIC_SITE_DOMAIN` は一部のサイトマップ生成処理で使用されます。  
-`NEXT_PUBLIC_SITE_DOMIN` は別実装でも参照されているため、現状は両方設定しておくのが安全です。
+`NEXT_PUBLIC_SITE_DOMAIN` はサイトマップの URL に使用されます。既存の環境では `NEXT_PUBLIC_SITE_DOMIN` も引き続き使用できます。
 
 ### 3. 開発サーバーの起動
 

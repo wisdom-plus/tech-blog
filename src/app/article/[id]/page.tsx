@@ -11,20 +11,24 @@ import TagArea from "@/component/TagArea";
 import WaningAlert from "@/component/WaningAlert";
 import { isOverOneYearAgo } from "@/lib/date";
 
-export const metadata = {
-  title: "TechAmply | Article",
-};
+type ArticlePageProps = { params: Promise<{ id: string }> };
+
+export async function generateMetadata({ params }: ArticlePageProps) {
+  const { id } = await params;
+  const article = await getBlog(id);
+  if (!article) notFound();
+
+  return { title: article.title };
+}
 export const revalidate = 0;
 
-const Page = async (props: { params: Promise<{ id: string }> }) => {
+const Page = async (props: ArticlePageProps) => {
   const params = await props.params;
   const data = await getBlog(params.id);
 
   if (!data) {
     notFound();
   }
-
-  metadata.title = data.title;
 
   return (
     <>

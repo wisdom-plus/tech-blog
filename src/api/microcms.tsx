@@ -1,4 +1,5 @@
 import { client } from "lib/client";
+import { cache } from "react";
 import { OFFSET, PER_PAGE } from "@/constants/index";
 import type { Article, Tag } from "@/types/index";
 
@@ -49,7 +50,17 @@ export const getBlogList = async ({
   }
 };
 
-export const getBlog = async (id: string) => {
+export const getSitemapPosts = () =>
+  client.getAllContents<Pick<Article, "id" | "published_at">>({
+    endpoint: "blog",
+    queries: {
+      fields: ["id", "published_at"],
+      filters: `published_at[less_than]${new Date().toISOString()}`,
+    },
+    customRequestInit: { next: { revalidate: 60 } },
+  });
+
+export const getBlog = cache(async (id: string) => {
   try {
     const res = await client.get<Article>({
       endpoint: "blog",
@@ -61,10 +72,17 @@ export const getBlog = async (id: string) => {
       },
     });
     return res;
-  } catch (_error) {
-    return false;
+  } catch (error) {
+    // The microCMS SDK exposes the HTTP status in the error message.
+    if (
+      error instanceof Error &&
+      /^fetch API response status: 404(?:\s|$)/.test(error.message)
+    ) {
+      return null;
+    }
+    throw error;
   }
-};
+});
 
 export const getTagList = async ({ offset = 1, limit = PER_PAGE }) => {
   const offset_num = OFFSET(offset);

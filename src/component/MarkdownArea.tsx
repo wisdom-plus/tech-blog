@@ -1,7 +1,33 @@
 import { load } from "cheerio";
 import type { AnyNode, Element } from "domhandler";
 import hljs, { type HighlightResult } from "highlight.js";
+import { parse } from "postcss";
 import { createElement, Fragment, type ReactNode } from "react";
+
+const parseInlineStyle = (style: string) => {
+  try {
+    const rule = parse(`element {${style}}`).first;
+    const declarations = rule?.type === "rule" ? rule.nodes : [];
+    return Object.fromEntries(
+      declarations.flatMap((declaration) => {
+        if (declaration.type !== "decl") return [];
+
+        const { prop, value, important } = declaration;
+        const property = prop.startsWith("--")
+          ? prop
+          : prop
+              .toLowerCase()
+              .replace(/^-ms-/, "ms-")
+              .replace(/-([a-z])/g, (_, letter: string) =>
+                letter.toUpperCase(),
+              );
+        return [[property, important ? `${value} !important` : value]];
+      }),
+    );
+  } catch {
+    return undefined;
+  }
+};
 
 const nodesToReact = (nodes: AnyNode[], keyPrefix: string): ReactNode[] =>
   nodes
@@ -33,6 +59,9 @@ const nodesToReact = (nodes: AnyNode[], keyPrefix: string): ReactNode[] =>
         props.className = props.class;
         delete props.class;
       }
+      if (typeof props.style === "string") {
+        props.style = parseInlineStyle(props.style);
+      }
 
       return createElement(element.name, props, children);
     })
@@ -41,17 +70,18 @@ const nodesToReact = (nodes: AnyNode[], keyPrefix: string): ReactNode[] =>
 const MarkdownArea = ({ body }: { body: string }) => {
   const $ = load(body);
   $("div[data-filename]").each((_, elm) => {
-    $(elm).prepend(`<span>${$(elm).data("filename")}</span>`);
+    $(elm).prepend($("<span>").text($(elm).attr("data-filename") ?? ""));
   });
   $("pre code").each((_, elm) => {
-    const language = $(elm).attr("class") || "";
+    const classes = $(elm).attr("class")?.trim() ?? "";
+    const language = classes.match(/(?:^|\s)language-([^\s]+)/)?.[1] ?? classes;
     let result: HighlightResult;
 
-    if (language === "") {
+    if (!language || !hljs.getLanguage(language)) {
       result = hljs.highlightAuto($(elm).text());
     } else {
       result = hljs.highlight($(elm).text(), {
-        language: language.replace("language-", ""),
+        language,
       });
     }
     $(elm).html(result.value);

@@ -1,9 +1,10 @@
-import { getBlogList } from "@/api/microcms";
+import type { MetadataRoute } from "next";
+import { getSitemapPosts } from "@/api/microcms";
 
-const routesMap = [
-  "",
+const routes = [
+  "/",
   "/about",
-  "/adminstrator",
+  "/administrator",
   "/article",
   "/web",
   "/infra",
@@ -13,33 +14,18 @@ const routesMap = [
   "/private_policy",
 ];
 
-const sitemap = async () => {
-  const res = await getBlogList({ limit: 1000 });
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const site =
+    process.env.NEXT_PUBLIC_SITE_DOMAIN ||
+    process.env.NEXT_PUBLIC_SITE_DOMIN ||
+    "https://techamply.com";
+  const posts = await getSitemapPosts();
 
-  const posts = () => {
-    if (!res)
-      return [
-        {
-          url: `${process.env.NEXT_PUBLIC_SITE_DOMIN}`,
-          lastModified: new Date().toISOString(),
-        },
-      ];
-    return res.contents.map((post) => {
-      return {
-        url: `${process.env.NEXT_PUBLIC_SITE_DOMIN}/article/${post.id}`,
-        lastModified: post.published_at
-          ? post.published_at
-          : new Date().toISOString(),
-      };
-    });
-  };
-
-  const routes = routesMap.map((route) => ({
-    url: `${process.env.NEXT_PUBLIC_SITE_DOMIN}${route}`,
-    lastModified: new Date().toISOString(),
-  }));
-
-  return [...routes, ...posts()];
-};
-
-export default sitemap;
+  return [
+    ...routes.map((route) => ({ url: new URL(route, site).href })),
+    ...posts.map((post) => ({
+      url: new URL(`/article/${post.id}`, site).href,
+      lastModified: post.published_at,
+    })),
+  ];
+}

@@ -1,12 +1,13 @@
 import ArticleCard from '@/component/ArticleCard'
 import HeaderNav from '@/component/HeaderNav'
+import Footer from '@/component/Footer'
 
 const Root = () => {
   return (
     <div>
       <HeaderNav />
-      <main className='container h-screen w-screen mx-32'>
-        <div className='flex justify-center items-center h-full mx-32'>
+      <main className='container h-screen w-screen mx-auto'>
+        <div className='flex justify-center items-center h-full mx-24'>
           <div className='container w-3/4'>
             <h1 className='text-4xl'>Tech-blog</h1>
             <p className='text-xl'>技術ブログです</p>
@@ -19,18 +20,7 @@ const Root = () => {
           </div>
         </div>
       </main>
-      <footer>
-        <div className='footer h-20'>
-          <div className='footer-start'>
-            <a className='footer-item' href='/'>
-              プライバシーポリシー
-            </a>
-            <a className='footer-item' href='/'>
-              利用規約
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

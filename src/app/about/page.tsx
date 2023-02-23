@@ -1,4 +1,8 @@
-export default function About() {
+import { getBlogList } from '@/api/microcms'
+const About = async () => {
+  const res = await getBlogList({ offset: 0 })
+  console.log(res)
+
   return (
     <main>
       <div className='navbar'>
@@ -15,3 +19,5 @@ export default function About() {
     </main>
   )
 }
+
+export default About

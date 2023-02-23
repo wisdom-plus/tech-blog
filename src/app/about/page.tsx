@@ -1,12 +1,7 @@
-import { client } from 'lib/client'
-
-export default function About() {
-  const res = client
-    .get({
-      endpoint: 'blog',
-      contentId: '3fbjjr5d7wq',
-    })
-    .then((res) => console.log(res))
+import { getBlogList } from '@/api/microcms'
+const About = async () => {
+  const res = await getBlogList({ offset: 0 })
+  console.log(res)
 
   return (
     <main>
@@ -24,3 +19,5 @@ export default function About() {
     </main>
   )
 }
+
+export default About

@@ -6,7 +6,7 @@ const nextConfig = {
     appDir: true,
   },
   eslint: {
-    dirs: ['app', 'pages', 'utils', 'components', 'hooks', 'types', 'public'],
+    dirs: ['app', 'pages', 'utils', 'components', 'hooks', 'types', 'public', 'api'],
   },
 }
 

@@ -5,7 +5,8 @@
     "plugion:import/recommended",
     "plugion:import/typescript-recommended",
     "plugion:import/warnings",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
   "rules": {
     "import/order": [

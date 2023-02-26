@@ -11,12 +11,22 @@ const Root = () => {
           <div className='container w-3/4'>
             <h1 className='text-4xl'>Tech-blog</h1>
             <p className='text-xl'>技術ブログです</p>
-            <ArticleCard />
+            <div className='flex flex-wrap justify-evenly'>
+              <ArticleCard />
+              <ArticleCard />
+              <ArticleCard />
+              <ArticleCard />
+              <ArticleCard />
+              <ArticleCard />
+            </div>
           </div>
           <div className='container w-1/4'>
-            <a className='btn btn-primary' href='/blog'>
-              ブログへ
-            </a>
+            <h2 className='text-2xl'>カテゴリー</h2>
+            <div className='container'>
+              <a className='btn btn-primary' href='/blog'>
+                ブログへ
+              </a>
+            </div>
           </div>
         </div>
       </main>

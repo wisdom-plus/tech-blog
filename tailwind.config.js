@@ -8,7 +8,12 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        merriweather: 'var(--font-merriweather)',
+        merrisans: 'var(--font-merriweather-sans)',
+      },
+    },
   },
   plugins: [require('rippleui')],
 }

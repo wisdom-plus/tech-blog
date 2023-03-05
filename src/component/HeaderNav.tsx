@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const HeaderNav = () => {
   return (
-    <div className='navbar h-20'>
+    <div className='navbar h-20 mx-24'>
       <div className='navbar-start'>
         <a href='/' className='navbar-item flex'>
           <Image src='/logo-white.png' width={50} height={50} alt='logo' />

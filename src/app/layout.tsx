@@ -1,4 +1,6 @@
 import { Merriweather, Merriweather_Sans } from '@next/font/google'
+import HeaderNav from '@/component/HeaderNav'
+import Footer from '@/component/Footer'
 import './globals.css'
 
 const merriweather = Merriweather({
@@ -23,7 +25,13 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className='leading-normal tracking-normal'>{children}</body>
+      <body className='leading-normal tracking-normal'>
+        <div>
+          <HeaderNav />
+          {children}
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }

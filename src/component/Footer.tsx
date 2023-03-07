@@ -22,7 +22,7 @@ const Footer = () => {
               <Link href='/'>インフラ</Link>
             </li>
             <li>
-              <Link href='/'>UI</Link>
+              <Link href='/'>UI/UX</Link>
             </li>
             <li>
               <Link href='/'>勉強会</Link>

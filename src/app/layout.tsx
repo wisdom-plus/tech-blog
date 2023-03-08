@@ -1,7 +1,6 @@
 import { Merriweather, Merriweather_Sans } from '@next/font/google'
 import HeaderNav from '@/component/HeaderNav'
 import Footer from '@/component/Footer'
-import ThemeWrap from '@/component/ThemeWrap'
 import './globals.css'
 
 const merriweather = Merriweather({
@@ -20,17 +19,19 @@ const merriweather_sans = Merriweather_Sans({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang='jp' className={`${merriweather.variable} ${merriweather_sans.variable}`}>
+    <html
+      lang='jp'
+      className={`${merriweather.variable} ${merriweather_sans.variable}`}
+      data-theme='dark'
+    >
       <head />
-      <ThemeWrap>
-        <body className='leading-normal tracking-normal'>
-          <div>
-            <HeaderNav />
-            {children}
-            <Footer />
-          </div>
-        </body>
-      </ThemeWrap>
+      <body className='leading-normal tracking-normal'>
+        <div>
+          <HeaderNav />
+          {children}
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }

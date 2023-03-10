@@ -3,20 +3,27 @@ import ArticleCardRow from '@/component/ArticleCardRow'
 
 const Root = () => {
   return (
-    <main className='container h-screen w-screen mx-auto my-20'>
-      <div className='flex justify-center items-center h-full mx-24'>
-        <div className='container w-3/4'>
-          <h1 className='text-4xl mb-12'>最新の投稿</h1>
-          <div className='flex flex-wrap justify-evenly'>
+    <main className='container h-full w-full mx-auto my-20 top-16'>
+      <div className='flex flex-row justify-center items-center h-full w-full mx-24'>
+        <div className='max-w-4xl flex flex-col h-full w-full'>
+          <h1 className='text-4xl'>最新の投稿</h1>
+          <div className='divider'></div>
+          <div className='max-w-7xl h-full w-full flex flex-wrap justify-evenly'>
+            <ArticleCard />
+            <ArticleCard />
             <ArticleCard />
             <ArticleCard />
             <ArticleCard />
             <ArticleCard />
           </div>
         </div>
-        <div className='container w-1/4'>
-          <h2 className='text-2xl mb-6'>Ranking</h2>
+        <div className='container max-w-sm'>
+          <h2 className='text-2xl'>Ranking</h2>
+          <div className='divider'></div>
           <div className='container'>
+            <ArticleCardRow />
+            <ArticleCardRow />
+            <ArticleCardRow />
             <ArticleCardRow />
           </div>
         </div>

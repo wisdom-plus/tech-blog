@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const ArticleCardRow = () => {
   return (
-    <Link href='/' className='card'>
+    <Link href='/' className='card mb-4'>
       <div className='card-body flex-row'>
         <Image src='/card/1183.jpeg' alt='サムネイル' width='100' height='100' />
         <div className='flex flex-col'>

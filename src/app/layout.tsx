@@ -26,7 +26,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     >
       <head />
       <body className='leading-normal tracking-normal'>
-        <div>
+        <div className='h-full w-full'>
           <HeaderNav />
           {children}
           <Footer />

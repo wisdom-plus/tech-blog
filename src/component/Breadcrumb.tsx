@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 const Breadcrumb = () => {
   const pathname = usePathname()
@@ -11,9 +12,11 @@ const Breadcrumb = () => {
     }
   }, [pathname])
   return (
-    <div className='breadcrumbs text-sm'>
+    <div className='breadcrumbs text-sm pt-4 pb-12 px-4'>
       <ul>
-        <li>Top</li>
+        <li>
+          <Link href='/'>Top</Link>
+        </li>
         {paths.map((path, index) => (
           <li key={index}>{path}</li>
         ))}

@@ -1,5 +1,6 @@
 import { Merriweather, Merriweather_Sans } from '@next/font/google'
 import HeaderNav from '@/component/HeaderNav'
+import BackImage from '@/component/BackImage'
 import Footer from '@/component/Footer'
 import './globals.css'
 
@@ -28,6 +29,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className='leading-normal tracking-normal'>
         <div className='h-full w-full'>
           <HeaderNav />
+          <BackImage />
           {children}
           <Footer />
         </div>

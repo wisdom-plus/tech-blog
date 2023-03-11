@@ -1,5 +1,4 @@
 import ArticleCard from '@/component/ArticleCard'
-import ArticleCardRow from '@/component/ArticleCardRow'
 
 const Root = () => {
   return (

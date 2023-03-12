@@ -20,7 +20,7 @@ const HeaderNav = () => {
             インフラ
           </Link>
           <Link href='/' className='navbar-item text-whiteInverted ml-3 text-lg'>
-            UI/UX
+            デザイン
           </Link>
         </div>
         <div className='navbar-end gap-6 md:gap-3 mr-12 mt-2'>

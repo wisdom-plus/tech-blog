@@ -1,4 +1,6 @@
 import { Merriweather, Merriweather_Sans } from '@next/font/google'
+import HeaderNav from '@/component/HeaderNav'
+import Footer from '@/component/Footer'
 import './globals.css'
 
 const merriweather = Merriweather({
@@ -17,13 +19,19 @@ const merriweather_sans = Merriweather_Sans({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang='jp' className={`${merriweather.variable} ${merriweather_sans.variable}`}>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html
+      lang='jp'
+      className={`${merriweather.variable} ${merriweather_sans.variable}`}
+      data-theme='dark'
+    >
       <head />
-      <body className='leading-normal tracking-normal'>{children}</body>
+      <body className='leading-normal tracking-normal'>
+        <div className='h-full w-full'>
+          <HeaderNav />
+          {children}
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }

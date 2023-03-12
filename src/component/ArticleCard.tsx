@@ -1,11 +1,15 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 const ArticleCard = () => {
   return (
-    <div className='card w-1/3 m-4'>
+    <Link href='/' className='card card-image-cover max-w-4sm mb-8'>
+      <Image src='/card/1183.jpeg' alt='サムネイル' width='500' height='500' />
       <div className='card-body'>
         <h2 className='card-header'>タイトル</h2>
-        <p className='card-content'>ブログの内容の文章が入ります</p>
+        <div className='text-right'>2023.03.04</div>
       </div>
-    </div>
+    </Link>
   )
 }
 

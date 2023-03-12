@@ -13,7 +13,11 @@ module.exports = {
         merriweather: 'var(--font-merriweather)',
         merrisans: 'var(--font-merriweather-sans)',
       },
+      minHeight: {
+        210: '260px',
+      },
     },
   },
+  darkMode: 'class',
   plugins: [require('rippleui')],
 }

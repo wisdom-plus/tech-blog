@@ -16,13 +16,13 @@ const Footer = () => {
           <h2 className='mb-6 text-sm font-semibold uppercase'>カテゴリー</h2>
           <ul className='flex flex-col gap-4 text-content2'>
             <li>
-              <Link href='/'>Web</Link>
+              <Link href='/web'>Web</Link>
             </li>
             <li>
-              <Link href='/'>インフラ</Link>
+              <Link href='/infra'>インフラ</Link>
             </li>
             <li>
-              <Link href='/'>UI/UX</Link>
+              <Link href='/design'>デザイン</Link>
             </li>
             <li>
               <Link href='/'>勉強会</Link>
@@ -53,7 +53,7 @@ const Footer = () => {
           <h2 className='mb-6 text-sm font-semibold uppercase'>Links</h2>
           <ul className='flex flex-row gap-4 text-content2'>
             <li>
-              <Link href='/'>
+              <Link href='https://github.com/tomoron'>
                 <svg
                   className='fill-slate-700'
                   xmlns='http://www.w3.org/2000/svg'
@@ -66,7 +66,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href='/'>
+              <Link href='https://twitter.com/tomoshi_web'>
                 <svg
                   className='fill-slate-700'
                   xmlns='http://www.w3.org/2000/svg'

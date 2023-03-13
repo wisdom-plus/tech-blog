@@ -45,7 +45,7 @@ const Footer = () => {
               <Link href='/'>運営者について</Link>
             </li>
             <li>
-              <Link href='/'>プライベートポリシー</Link>
+              <Link href='/private_policy'>プライベートポリシー</Link>
             </li>
           </ul>
         </div>

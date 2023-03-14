@@ -25,10 +25,10 @@ const Footer = () => {
               <Link href='/design'>デザイン</Link>
             </li>
             <li>
-              <Link href='/'>勉強会</Link>
+              <Link href='/meeting'>勉強会</Link>
             </li>
             <li>
-              <Link href='/'>資格勉強</Link>
+              <Link href='/license'>資格勉強</Link>
             </li>
           </ul>
         </div>

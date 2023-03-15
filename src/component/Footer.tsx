@@ -9,7 +9,7 @@ const Footer = () => {
             <h1 className='text-2xl font-merriweather'>TechAmply</h1>
           </div>
           <p className='text-sm text-content3'>
-            エンジニア1年目がスキルアップをするため、バッグエンド、フロントエンド、インフラなど興味のあることを実践し、記事にしてくブログです
+            エンジニア1年目がスキルアップをするため、バッグエンド、フロントエンド、インフラなど興味のあることを実践し、記事にしていくブログです
           </p>
         </div>
         <div>
@@ -39,7 +39,7 @@ const Footer = () => {
               <Link href='/'>ホーム</Link>
             </li>
             <li>
-              <Link href='/'>このサイトについて</Link>
+              <Link href='/about'>このサイトについて</Link>
             </li>
             <li>
               <Link href='/'>運営者について</Link>
@@ -53,7 +53,7 @@ const Footer = () => {
           <h2 className='mb-6 text-sm font-semibold uppercase'>Links</h2>
           <ul className='flex flex-row gap-4 text-content2'>
             <li>
-              <Link href='https://github.com/tomoron'>
+              <Link href='https://twitter.com/wisdom_puls_jp'>
                 <svg
                   className='fill-slate-700'
                   xmlns='http://www.w3.org/2000/svg'

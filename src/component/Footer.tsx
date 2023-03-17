@@ -9,26 +9,26 @@ const Footer = () => {
             <h1 className='text-2xl font-merriweather'>TechAmply</h1>
           </div>
           <p className='text-sm text-content3'>
-            エンジニア1年目がスキルアップをするため、バッグエンド、フロントエンド、インフラなど興味のあることを実践し、記事にしてくブログです
+            エンジニア1年目がスキルアップをするため、バッグエンド、フロントエンド、インフラなど興味のあることを実践し、記事にしていくブログです
           </p>
         </div>
         <div>
           <h2 className='mb-6 text-sm font-semibold uppercase'>カテゴリー</h2>
           <ul className='flex flex-col gap-4 text-content2'>
             <li>
-              <Link href='/'>Web</Link>
+              <Link href='/web'>Web</Link>
             </li>
             <li>
-              <Link href='/'>インフラ</Link>
+              <Link href='/infra'>インフラ</Link>
             </li>
             <li>
-              <Link href='/'>UI/UX</Link>
+              <Link href='/design'>デザイン</Link>
             </li>
             <li>
-              <Link href='/'>勉強会</Link>
+              <Link href='/meeting'>勉強会</Link>
             </li>
             <li>
-              <Link href='/'>資格勉強</Link>
+              <Link href='/license'>資格勉強</Link>
             </li>
           </ul>
         </div>
@@ -39,13 +39,13 @@ const Footer = () => {
               <Link href='/'>ホーム</Link>
             </li>
             <li>
-              <Link href='/'>このサイトについて</Link>
+              <Link href='/about'>このサイトについて</Link>
             </li>
             <li>
-              <Link href='/'>運営者について</Link>
+              <Link href='/administrator'>運営者について</Link>
             </li>
             <li>
-              <Link href='/'>プライベートポリシー</Link>
+              <Link href='/private_policy'>プライベートポリシー</Link>
             </li>
           </ul>
         </div>
@@ -53,7 +53,7 @@ const Footer = () => {
           <h2 className='mb-6 text-sm font-semibold uppercase'>Links</h2>
           <ul className='flex flex-row gap-4 text-content2'>
             <li>
-              <Link href='/'>
+              <Link href='https://twitter.com/wisdom_puls_jp'>
                 <svg
                   className='fill-slate-700'
                   xmlns='http://www.w3.org/2000/svg'
@@ -66,7 +66,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href='/'>
+              <Link href='https://twitter.com/tomoshi_web'>
                 <svg
                   className='fill-slate-700'
                   xmlns='http://www.w3.org/2000/svg'

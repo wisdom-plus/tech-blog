@@ -1,5 +1,10 @@
 import Link from 'next/link'
 import BackImage from '@/component/BackImage'
+
+export const metadata = {
+  title: 'TechAmply | About',
+}
+
 const Page = () => {
   return (
     <>

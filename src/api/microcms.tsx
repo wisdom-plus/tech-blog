@@ -1,6 +1,6 @@
 import { client } from 'lib/client'
 
-export const getBlogList = async ({ offset = 0, limit = 10, category = 'web' }) => {
+export const getBlogList = async ({ offset = 0, limit = 10, category = 'all' }) => {
   const res = await client.getList({
     endpoint: 'blog',
     queries: {

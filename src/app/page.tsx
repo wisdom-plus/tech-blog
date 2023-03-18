@@ -1,7 +1,10 @@
 import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
+import { getBlogList } from '@/api/microcms'
 
-const Root = () => {
+const Root = async () => {
+  const data = await getBlogList({})
+
   return (
     <>
       <BackImage title='最新の投稿' />
@@ -9,12 +12,9 @@ const Root = () => {
         <div className='flex flex-row justify-center items-center h-full w-full mx-auto max-w-7xl'>
           <div className='flex flex-col h-full w-full'>
             <div className='max-w-7xl h-full w-full flex flex-wrap justify-evenly space-x-3'>
-              <ArticleCard />
-              <ArticleCard />
-              <ArticleCard />
-              <ArticleCard />
-              <ArticleCard />
-              <ArticleCard />
+              {data.map((item) => {
+                return <ArticleCard key={item.id} />
+              })}
             </div>
           </div>
         </div>

@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'TechAmply | 運営者について',
+}
+
 const Page = () => {
   return (
     <div className='max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0'>

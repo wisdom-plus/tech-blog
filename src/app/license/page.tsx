@@ -1,6 +1,10 @@
 import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
 
+export const metadata = {
+  title: 'TechAmply | 資格',
+}
+
 const Page = () => {
   return (
     <>

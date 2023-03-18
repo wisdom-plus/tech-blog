@@ -1,5 +1,9 @@
 import BackImage from '@/component/BackImage'
 
+export const metadata = {
+  title: 'TechAmply | Private Policy',
+}
+
 const Page = () => {
   return (
     <>

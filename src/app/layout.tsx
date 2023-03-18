@@ -3,6 +3,12 @@ import HeaderNav from '@/component/HeaderNav'
 import Footer from '@/component/Footer'
 import './globals.css'
 
+export const metadata = {
+  title: 'TechAmply',
+  description:
+    "TechAmply is a blog about software development, programming, and technology. It's written by a software engineer who loves to learn and share his knowledge.",
+}
+
 const merriweather = Merriweather({
   variable: '--font-merriweather',
   display: 'swap',
@@ -24,7 +30,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       className={`${merriweather.variable} ${merriweather_sans.variable}`}
       data-theme='dark'
     >
-      <head />
       <body className='leading-normal tracking-normal'>
         <div className='h-full w-full'>
           <HeaderNav />

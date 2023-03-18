@@ -1,8 +1,15 @@
 import { client } from 'lib/client'
 
-export const getBlogList = async ({ offset = 0, limit = 10 }) => {
-  const res = await client.get({ endpoint: 'blog' })
-  return res
+export const getBlogList = async ({ offset = 0, limit = 10, category = 'web' }) => {
+  const res = await client.getList({
+    endpoint: 'blog',
+    queries: {
+      offset: offset,
+      limit: limit,
+      filters: category == 'all' ? '' : `category[contains]${category}`,
+    },
+  })
+  return res.contents
 }
 
 export const getBlog = async (id: string) => {

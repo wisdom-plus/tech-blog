@@ -4,7 +4,6 @@ import { getBlogList } from '@/api/microcms'
 
 const Root = async () => {
   const data = await getBlogList({})
-
   return (
     <>
       <BackImage title='最新の投稿' />

@@ -17,7 +17,7 @@ const Page = async () => {
           <div className='flex flex-col h-full w-full'>
             <div className='max-w-7xl h-full w-full flex flex-wrap justify-evenly space-x-3'>
               {data.map((item) => {
-                return <ArticleCard key={item.id} />
+                return <ArticleCard key={item.id} article={item} />
               })}
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { client } from 'lib/client'
+import { article } from '@/types/index'
 
 export const getBlogList = async ({ offset = 0, limit = 10, category = 'all' }) => {
   const today = new Date().toISOString()
@@ -6,7 +7,7 @@ export const getBlogList = async ({ offset = 0, limit = 10, category = 'all' }) 
     category == 'all'
       ? `published_at[less_than]${today}`
       : `category[contains]${category}[and]published_at[less_than]${today}]`
-  const res = await client.getList({
+  const res = await client.getList<article>({
     endpoint: 'blog',
     queries: {
       offset: offset,

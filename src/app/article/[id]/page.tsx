@@ -22,6 +22,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
             <div className='card-body'>
               <div className='text-right'>{dayjs(data.published_at).format('YYYY.MM.DD')}</div>
               <div
+                className='prose prose-sm sm:prose lg:prose-lg xl:prose-xl'
                 dangerouslySetInnerHTML={{
                   __html: `${data.body}`,
                 }}

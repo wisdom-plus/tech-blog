@@ -1,7 +1,10 @@
+import dayjs from 'dayjs'
+import { load } from 'cheerio'
+import hljs from 'highlight.js'
 import Breadcrumb from '@/component/Breadcrumb'
 import { getBlog } from '@/api/microcms'
-import dayjs from 'dayjs'
 import '@/style/typography.scss'
+import 'highlight.js/styles/github-dark.css'
 
 export const metadata = {
   title: 'TechAmply | Article',
@@ -10,6 +13,14 @@ export const metadata = {
 const Page = async ({ params }: { params: { id: string } }) => {
   const data = await getBlog(params.id)
   metadata.title = data.title
+
+  const $ = load(data.body)
+  $('pre code').each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text())
+    $(elm).html(result.value)
+    $(elm).addClass('hljs')
+  })
+  data.body = $.html()
 
   return (
     <>

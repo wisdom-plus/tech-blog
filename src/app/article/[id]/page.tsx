@@ -1,6 +1,7 @@
 import Breadcrumb from '@/component/Breadcrumb'
 import { getBlog } from '@/api/microcms'
 import dayjs from 'dayjs'
+import '@/style/typography.scss'
 
 export const metadata = {
   title: 'TechAmply | Article',
@@ -22,7 +23,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
             <div className='card-body'>
               <div className='text-right'>{dayjs(data.published_at).format('YYYY.MM.DD')}</div>
               <div
-                className='prose prose-sm sm:prose lg:prose-lg xl:prose-xl'
+                className='prose prose-sm sm:prose'
                 dangerouslySetInnerHTML={{
                   __html: `${data.body}`,
                 }}

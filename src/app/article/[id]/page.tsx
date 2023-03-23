@@ -2,6 +2,7 @@ import dayjs from 'dayjs'
 import { load } from 'cheerio'
 import hljs from 'highlight.js'
 import Breadcrumb from '@/component/Breadcrumb'
+import ArticleToc from '@/component/ArticleToc'
 import { getBlog } from '@/api/microcms'
 import '@/style/typography.scss'
 import 'highlight.js/styles/github-dark.css'
@@ -41,11 +42,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
               />
             </div>
           </div>
-          <div className='flex flex-col w-full mx-auto rounded-xl bg-gray-3 max-w-sm'>
-            <div>
-              <div className='text-left ml-4 text-xl'>目次</div>
-            </div>
-          </div>
+          <ArticleToc body={data.body} />
         </div>
       </main>
     </>

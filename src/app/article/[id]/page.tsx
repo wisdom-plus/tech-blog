@@ -30,7 +30,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
         <h1 className='text-4xl text-center pt-12 px-4'>{data.title}</h1>
       </div>
       <main className='h-full w-full mx-auto my-20 top-16'>
-        <div className='flex flex-row justify-center items-center h-full w-full mx-auto max-w-7xl gap-10'>
+        <div className='flex flex-row justify-around  h-full w-full mx-auto max-w-7xl gap-10'>
           <div className='flex flex-col w-full mx-auto rounded-xl bg-gray-3 max-w-4xl'>
             <div className='card-body'>
               <div className='text-right'>{dayjs(data.published_at).format('YYYY.MM.DD')}</div>
@@ -42,7 +42,9 @@ const Page = async ({ params }: { params: { id: string } }) => {
               />
             </div>
           </div>
-          <ArticleToc body={data.body} />
+          <div className='flex flex-col w-full mx-auto max-w-sm'>
+            <ArticleToc body={data.body} />
+          </div>
         </div>
       </main>
     </>

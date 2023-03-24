@@ -14,3 +14,9 @@
 [data-theme="light"] .top-image {
   background-image: url('/images/light-top-image.jpg');
 }
+[data-theme="dark"] .summary-border {
+  border-color: rgb(var(--gray-6)/var(--tw-bg-opacity)) !important;
+}
+[data-theme="light"] .summary-border {
+  border-color: rgb(var(--gray-6)/var(--tw-bg-opacity)) !important;
+}

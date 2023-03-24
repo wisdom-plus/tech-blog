@@ -20,7 +20,7 @@ const ArticleToc = ({ body }: { body: string }) => {
   }))
 
   return (
-    <div className='sticky top-12 flex flex-col w-full mx-auto rounded-xl bg-gray-3'>
+    <div className='flex flex-col w-full mx-auto rounded-xl bg-gray-3'>
       <div className='ml-4 p-3 article-toc'>
         <div className='text-left mb-3 text-xl'>目次</div>
         <div className='flex flex-col'>

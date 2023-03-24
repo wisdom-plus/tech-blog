@@ -3,6 +3,7 @@ import { load } from 'cheerio'
 import hljs from 'highlight.js'
 import Breadcrumb from '@/component/Breadcrumb'
 import ArticleToc from '@/component/ArticleToc'
+import ArticleSummary from '@/component/ArticleSummary'
 import { getBlog } from '@/api/microcms'
 import '@/style/typography.scss'
 import 'highlight.js/styles/github-dark.css'
@@ -43,6 +44,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
             </div>
           </div>
           <div className='flex flex-col w-full mx-auto max-w-sm'>
+            <ArticleSummary published_at={data.published_at} readtime={10} />
             <ArticleToc body={data.body} />
           </div>
         </div>

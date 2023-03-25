@@ -10,4 +10,5 @@ export type article = {
   tags: string[]
   thumbnail: string
   published_at: Date
+  readtime: number
 }

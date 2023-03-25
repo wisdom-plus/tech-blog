@@ -1,9 +1,11 @@
 import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
+import Pagination from '@/component/Pagination'
 import { getBlogList } from '@/api/microcms'
 
-const Root = async () => {
-  const data = await getBlogList({})
+const Root = async ({ _, searchParams }: { _: unknown; searchParams: { page: number } }) => {
+  const offset = searchParams.page ? searchParams.page : 1
+  const data = await getBlogList({ offset: offset })
   return (
     <>
       <BackImage title='最新の投稿' />
@@ -15,6 +17,7 @@ const Root = async () => {
                 return <ArticleCard key={item.id} article={item} />
               })}
             </div>
+            {data.totalCount > 3 && <Pagination count={data.totalCount} />}
           </div>
         </div>
       </main>

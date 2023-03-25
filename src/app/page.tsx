@@ -2,6 +2,7 @@ import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
 import Pagination from '@/component/Pagination'
 import { getBlogList } from '@/api/microcms'
+import { PER_PAGE } from '@/consts'
 
 const Root = async ({ _, searchParams }: { _: unknown; searchParams: { page: number } }) => {
   const offset = searchParams.page ? searchParams.page : 1
@@ -17,7 +18,7 @@ const Root = async ({ _, searchParams }: { _: unknown; searchParams: { page: num
                 return <ArticleCard key={item.id} article={item} />
               })}
             </div>
-            {data.totalCount > 3 && <Pagination count={data.totalCount} />}
+            {data.totalCount > PER_PAGE && <Pagination count={data.totalCount} />}
           </div>
         </div>
       </main>

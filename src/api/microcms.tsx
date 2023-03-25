@@ -15,7 +15,7 @@ export const getBlogList = async ({ offset = 0, limit = 10, category = 'all' }) 
       filters: fileter,
     },
   })
-  return res.contents
+  return { contents: res.contents, totalCount: res.totalCount }
 }
 
 export const getBlog = async (id: string) => {

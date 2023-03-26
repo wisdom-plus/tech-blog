@@ -1,7 +1,7 @@
 import { Merriweather, Merriweather_Sans } from '@next/font/google'
+import Footer from '@/component/Footer'
 import HeaderNav from '@/component/HeaderNav'
 import TopButton from '@/component/TopButton'
-import Footer from '@/component/Footer'
 import '@/style/globals.css'
 
 export const metadata = {

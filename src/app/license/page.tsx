@@ -1,6 +1,6 @@
+import { getBlogList } from '@/api/microcms'
 import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
-import { getBlogList } from '@/api/microcms'
 
 export const metadata = {
   title: 'TechAmply | 資格',

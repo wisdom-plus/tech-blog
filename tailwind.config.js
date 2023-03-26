@@ -19,5 +19,5 @@ module.exports = {
     },
   },
   darkMode: 'class',
-  plugins: [require('rippleui')],
+  plugins: [require('rippleui'), require('@tailwindcss/typography')],
 }

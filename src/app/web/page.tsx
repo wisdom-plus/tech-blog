@@ -1,11 +1,22 @@
 import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
+import Pagination from '@/component/Pagination'
+import { getBlogList } from '@/api/microcms'
+import { PER_PAGE } from '@/consts'
 
 export const metadata = {
   title: 'TechAmply | Web',
 }
 
-const Page = () => {
+const Page = async ({
+  params,
+  searchParams,
+}: {
+  params: string
+  searchParams: { page: number }
+}) => {
+  const offset = searchParams.page ? searchParams.page : 1
+  const data = await getBlogList({ category: 'web', offset: offset })
   return (
     <>
       <BackImage title='Web' />
@@ -13,13 +24,11 @@ const Page = () => {
         <div className='flex flex-row justify-center items-center h-full w-full mx-auto max-w-7xl'>
           <div className='flex flex-col h-full w-full'>
             <div className='max-w-7xl h-full w-full flex flex-wrap justify-evenly space-x-3'>
-              <ArticleCard />
-              <ArticleCard />
-              <ArticleCard />
-              <ArticleCard />
-              <ArticleCard />
-              <ArticleCard />
+              {data.contents.map((item) => {
+                return <ArticleCard key={item.id} article={item} />
+              })}
             </div>
+            {data.totalCount > PER_PAGE && <Pagination count={data.totalCount} />}
           </div>
         </div>
       </main>

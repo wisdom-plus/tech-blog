@@ -1,7 +1,8 @@
 import { Merriweather, Merriweather_Sans } from '@next/font/google'
 import HeaderNav from '@/component/HeaderNav'
+import TopButton from '@/component/TopButton'
 import Footer from '@/component/Footer'
-import './globals.css'
+import '@/style/globals.css'
 
 export const metadata = {
   title: 'TechAmply',
@@ -34,6 +35,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <div className='h-full w-full'>
           <HeaderNav />
           {children}
+          <TopButton />
           <Footer />
         </div>
       </body>

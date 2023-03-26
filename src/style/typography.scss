@@ -1,0 +1,24 @@
+
+[data-theme] .prose {
+  color: rgb(var(--content1) / var(--tw-text-opacity, 1)) !important;
+  :where(h1, h2, h3, h4, h5, h6, strong, blockquote) {
+    color: rgb(var(--content1) / var(--tw-text-opacity, 1)) !important;
+  }
+  :where(p code){
+    color: rgb(var(--content1) / var(--tw-text-opacity, 1)) !important;
+    background-color: rgb(var(--gray-7));
+    font-weight: 400;
+    border-radius: 0.25rem;
+    padding: 0.2em 0.2em;
+    font-size: 0.85em;
+    vertical-align: 0.08em;
+    &:before, {
+      content: "";
+      padding-right: 0.25rem;
+    }
+    &:after {
+      content: "";
+      padding-left: 0.25rem;
+    }
+  }
+}

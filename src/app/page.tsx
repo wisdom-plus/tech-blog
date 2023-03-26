@@ -4,7 +4,13 @@ import Pagination from '@/component/Pagination'
 import { getBlogList } from '@/api/microcms'
 import { PER_PAGE } from '@/consts'
 
-const Root = async ({ _, searchParams }: { _: unknown; searchParams: { page: number } }) => {
+const Root = async ({
+  params,
+  searchParams,
+}: {
+  params: string
+  searchParams: { page: number }
+}) => {
   const offset = searchParams.page ? searchParams.page : 1
   const data = await getBlogList({ offset: offset })
   return (

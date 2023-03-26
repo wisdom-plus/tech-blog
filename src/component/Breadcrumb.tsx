@@ -18,7 +18,9 @@ const Breadcrumb = () => {
           <Link href='/'>Top</Link>
         </li>
         {paths.map((path, index) => (
-          <li key={index}>{path}</li>
+          <li key={index}>
+            <Link href={`/${path}`}>{path}</Link>
+          </li>
         ))}
       </ul>
     </div>

@@ -1,7 +1,7 @@
+import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { article } from '@/types/index'
-import dayjs from 'dayjs'
 
 const ArticleCard = ({ article }: { article: article }) => {
   return (

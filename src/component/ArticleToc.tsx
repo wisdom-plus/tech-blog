@@ -1,4 +1,5 @@
 import { load } from 'cheerio'
+import Link from 'next/link'
 
 const typography = (tag: string) => {
   if (tag === 'h1') {
@@ -25,13 +26,13 @@ const ArticleToc = ({ body }: { body: string }) => {
         <div className='text-left mb-3 text-xl'>目次</div>
         <div className='flex flex-col'>
           {toc.map((data) => (
-            <a
+            <Link
               href={`#${data.id}`}
               key={data.id}
               className={`text-left mb-2 p-1 hover:bg-gray-5` + ` ${typography(data.rank)}`}
             >
               <div className=''>{data.text}</div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

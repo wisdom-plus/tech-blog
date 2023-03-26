@@ -8,7 +8,13 @@ export const metadata = {
   title: 'TechAmply | Web',
 }
 
-const Page = async ({ _, searchParams }: { _: unknown; searchParams: { page: number } }) => {
+const Page = async ({
+  params,
+  searchParams,
+}: {
+  params: string
+  searchParams: { page: number }
+}) => {
   const offset = searchParams.page ? searchParams.page : 1
   const data = await getBlogList({ category: 'web', offset: offset })
   return (

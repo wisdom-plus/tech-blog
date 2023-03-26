@@ -15,7 +15,7 @@ const Root = async () => {
         <div className='flex flex-row justify-center items-center h-full w-full mx-auto max-w-7xl'>
           <div className='flex flex-col h-full w-full'>
             <div className='max-w-7xl h-full w-full flex flex-wrap justify-evenly space-x-3'>
-              {data.map((item) => {
+              {data.contents.map((item) => {
                 return <ArticleCard key={item.id} article={item} />
               })}
             </div>

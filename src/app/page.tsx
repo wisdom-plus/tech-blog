@@ -1,7 +1,7 @@
+import { getBlogList } from '@/api/microcms'
 import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
 import Pagination from '@/component/Pagination'
-import { getBlogList } from '@/api/microcms'
 import { PER_PAGE } from '@/consts'
 
 const Root = async ({

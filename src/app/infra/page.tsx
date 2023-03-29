@@ -1,12 +1,20 @@
 import { getBlogList } from '@/api/microcms'
 import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
+import Pagination from '@/component/Pagination'
+import { PER_PAGE } from '@/consts'
 
 export const metadata = {
   title: 'TechAmply | インフラ',
 }
 
-const Page = async () => {
+const Page = async ({
+  params,
+  searchParams,
+}: {
+  params: string
+  searchParams: { page: number }
+}) => {
   const data = await getBlogList({ category: 'infra' })
 
   return (
@@ -20,6 +28,7 @@ const Page = async () => {
                 return <ArticleCard key={item.id} article={item} />
               })}
             </div>
+            {data.totalCount > PER_PAGE && <Pagination count={data.totalCount} />}
           </div>
         </div>
       </main>

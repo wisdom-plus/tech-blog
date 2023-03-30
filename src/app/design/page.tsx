@@ -1,13 +1,22 @@
 import { getBlogList } from '@/api/microcms'
 import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
+import Pagination from '@/component/Pagination'
+import { PER_PAGE } from '@/consts'
 
 export const metadata = {
   title: 'TechAmply | デザイン',
 }
 
-const Page = async () => {
-  const data = await getBlogList({ category: 'design' })
+const Page = async ({
+  params,
+  searchParams,
+}: {
+  params: string
+  searchParams: { page: number }
+}) => {
+  const offset = searchParams.page ? searchParams.page : 1
+  const data = await getBlogList({ category: 'design', offset: offset })
 
   return (
     <>

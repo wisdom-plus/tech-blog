@@ -15,7 +15,8 @@ const Page = async ({
   params: string
   searchParams: { page: number }
 }) => {
-  const data = await getBlogList({ category: 'infra' })
+  const offset = searchParams.page ? searchParams.page : 1
+  const data = await getBlogList({ category: 'infra', offset: offset })
 
   return (
     <>

@@ -1,51 +1,52 @@
 'use client'
-import { useRouter, usePathname } from 'next/navigation'
+
+import { usePathname, useSearchParams } from 'next/navigation'
 import Script from 'next/script'
-import { useEffect, useRef } from 'react'
+import { Suspense, useEffect } from 'react'
 import { GA_ID, pageview } from 'lib/gtag'
 
-const Analytics = () => {
-  const pathname = usePathname() // Get current route
-
-  // Save pathname on component mount into a REF
-  const savedPathNameRef = useRef(pathname)
-
+const GoogleAnalytics = () => {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
   useEffect(() => {
-    if (!GA_ID) {
-      return
-    }
-
-    const handleRouteChange = (url: string, { shallow }: any) => {
-      if (!shallow) {
-        pageview(url)
-      }
-    }
-
-    if (savedPathNameRef.current !== pathname) {
-      handleRouteChange(pathname, { shallow: false })
-    }
-  }, [pathname])
+    if (!searchParams) return
+    const url = pathname + searchParams.toString()
+    pageview(url)
+  }, [pathname, searchParams])
 
   return (
     <>
       <Script
         strategy='afterInteractive'
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
       />
       <Script
         id='gtag-init'
         strategy='afterInteractive'
         dangerouslySetInnerHTML={{
           __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.GA_TRACKING_ID}');
-          `,
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${GA_ID}', {
+          page_path: window.location.pathname,
+        });
+      `,
         }}
       />
     </>
   )
 }
 
+const Analytics = (): JSX.Element => {
+  return (
+    <>
+      {GA_ID && (
+        <Suspense>
+          <GoogleAnalytics />
+        </Suspense>
+      )}
+    </>
+  )
+}
 export default Analytics

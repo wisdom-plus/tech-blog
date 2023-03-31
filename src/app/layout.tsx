@@ -32,7 +32,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       className={`${merriweather.variable} ${merriweather_sans.variable}`}
       data-theme='dark'
     >
-      <Analytics />
+      <head>
+        <Analytics />
+      </head>
       <body className='leading-normal tracking-normal'>
         <div className='h-full w-full'>
           <HeaderNav />

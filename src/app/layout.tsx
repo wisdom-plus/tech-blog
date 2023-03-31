@@ -1,4 +1,5 @@
 import { Merriweather, Merriweather_Sans } from '@next/font/google'
+import Analytics from '@/component/Analytics'
 import Footer from '@/component/Footer'
 import HeaderNav from '@/component/HeaderNav'
 import TopButton from '@/component/TopButton'
@@ -31,6 +32,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       className={`${merriweather.variable} ${merriweather_sans.variable}`}
       data-theme='dark'
     >
+      <Analytics />
       <body className='leading-normal tracking-normal'>
         <div className='h-full w-full'>
           <HeaderNav />

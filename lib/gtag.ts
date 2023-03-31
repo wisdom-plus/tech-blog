@@ -1,4 +1,4 @@
-export const GA_ID = process.env.GA_TRACKING_ID || ''
+export const GA_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || ''
 
 export const pageview = (url: string) => {
   if (!GA_ID) return

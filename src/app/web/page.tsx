@@ -8,10 +8,10 @@ export const metadata = {
 }
 
 const Page = async ({
-  _params,
+  params,
   searchParams,
 }: {
-  _params: string
+  params: string
   searchParams: { page: number }
 }) => {
   return (

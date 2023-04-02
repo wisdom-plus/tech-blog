@@ -7,7 +7,7 @@ export const metadata = {
   title: 'TechAmply | 勉強会',
 }
 
-const Page = ({ _params, searchParams }: { _params: string; searchParams: { page: number } }) => {
+const Page = ({ params, searchParams }: { params: string; searchParams: { page: number } }) => {
   return (
     <>
       <BackImage title='勉強会' />

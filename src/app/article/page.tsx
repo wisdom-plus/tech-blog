@@ -1,24 +1,28 @@
-import { getBlogList } from '@/api/microcms'
-import ArticleCard from '@/component/ArticleCard'
+import { Suspense } from 'react'
+import ArticleCardArea from '@/component/ArticleCardArea'
 import BackImage from '@/component/BackImage'
+import LoadSpinner from '@/component/LoadSpinner'
 
 export const metadata = {
   title: 'TechAmply | Article',
 }
 
-const Root = async () => {
-  const data = await getBlogList({})
+const Root = ({ params, searchParams }: { params: string; searchParams: { page: number } }) => {
   return (
     <>
       <BackImage title='最新の投稿' />
       <main className='container h-full w-full mx-auto my-20 top-16'>
         <div className='flex flex-row justify-center items-center h-full w-full mx-auto max-w-7xl'>
           <div className='flex flex-col h-full w-full'>
-            <div className='max-w-7xl h-full w-full flex flex-wrap justify-evenly space-x-3'>
-              {data.contents.map((item) => {
-                return <ArticleCard key={item.id} article={item} />
-              })}
-            </div>
+            <Suspense
+              fallback={
+                <div className='max-w-7xl h-full w-full flex justify-evenly'>
+                  <LoadSpinner />
+                </div>
+              }
+            >
+              <ArticleCardArea category={'design'} searchParams={searchParams} />
+            </Suspense>
           </div>
         </div>
       </main>

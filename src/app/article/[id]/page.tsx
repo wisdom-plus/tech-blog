@@ -7,6 +7,7 @@ import ArticleToc from '@/component/ArticleToc'
 import Breadcrumb from '@/component/Breadcrumb'
 import '@/style/typography.scss'
 import 'highlight.js/styles/github-dark.css'
+import ShareButton from '@/component/ShareButton'
 
 export const metadata = {
   title: 'TechAmply | Article',
@@ -47,6 +48,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
             <div className='sticky top-12'>
               <ArticleSummary published_at={data.published_at} readtime={10} />
               <ArticleToc body={data.body} />
+              <ShareButton data={data} />
             </div>
           </div>
         </div>

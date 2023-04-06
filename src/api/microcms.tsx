@@ -17,12 +17,10 @@ export const getBlogList = async ({ offset = 1, limit = PER_PAGE, category = 'al
       filters: fileter,
     },
   })
-  console.log(res)
   return { contents: res.contents, totalCount: res.totalCount }
 }
 
 export const getBlog = async (id: string) => {
   const res = await client.get({ endpoint: 'blog', contentId: id })
-  console.log(res)
   return res
 }

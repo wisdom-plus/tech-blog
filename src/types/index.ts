@@ -8,7 +8,13 @@ export type article = {
   body: string
   category: string[]
   tags: string[]
-  thumbnail: string
+  thumbnail: thumbnail
   published_at: Date
   readtime: number
+}
+
+export type thumbnail = {
+  url: string
+  height: number
+  width: number
 }

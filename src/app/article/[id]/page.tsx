@@ -35,7 +35,6 @@ const Page = async ({ params }: { params: { id: string } }) => {
         <div className='flex flex-row justify-around  h-full w-full mx-auto max-w-7xl gap-10'>
           <div className='flex flex-col w-full mx-auto rounded-xl bg-gray-3 max-w-4xl'>
             <div className='card-body'>
-              <div className='text-right'>{dayjs(data.published_at).format('YYYY.MM.DD')}</div>
               <div
                 className='prose prose-sm sm:prose'
                 dangerouslySetInnerHTML={{

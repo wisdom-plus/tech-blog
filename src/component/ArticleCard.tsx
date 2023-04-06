@@ -30,7 +30,6 @@ const defaultImageUrl = (category: string) => {
 }
 
 const ArticleCard = ({ article }: { article: article }) => {
-  console.log(article.thumbnail)
   return (
     <Link href={`/article/${article.id}`} className='card card-image-cover max-w-4sm mb-8'>
       <Image

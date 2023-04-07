@@ -32,6 +32,13 @@ const Page = () => {
                 </Link>
                 もフォローしてください。
               </p>
+              <p>
+                当サイトは
+                <Link className='link link-ghost link-underline' href='https://loosedrawing.com/'>
+                  Loose Drawing
+                </Link>
+                様の画像を利用させていただいております。
+              </p>
             </article>
           </div>
         </div>

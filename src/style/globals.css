@@ -20,3 +20,14 @@
 [data-theme="light"] .summary-border {
   border-color: rgb(var(--gray-6)/var(--tw-bg-opacity)) !important;
 }
+
+.breadcrumbs {
+  color: rgb(var(--content1)/var(--tw-text-opacity)) !important;
+}
+.breadcrumbs>ul>li:first-child {
+  color: rgb(var(--content1)/var(--tw-text-opacity)) !important;
+}
+.breadcrumbs-active, .breadcrumbs>ul>li:last-child {
+  --tw-text-opacity: 1;
+  color: rgb(var(--content2)/var(--tw-text-opacity));
+}

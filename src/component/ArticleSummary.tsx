@@ -1,4 +1,6 @@
 import dayjs from 'dayjs'
+import { categoryMap } from '@/consts'
+import { Category } from '@/types'
 
 const AritcleSummary = ({
   published_at,
@@ -7,7 +9,7 @@ const AritcleSummary = ({
 }: {
   published_at: Date
   readtime: number
-  category: string[]
+  category: Category[]
 }) => {
   return (
     <div className='flex flex-col w-full mx-auto rounded-xl bg-gray-3 mb-6'>
@@ -50,7 +52,7 @@ const AritcleSummary = ({
             </svg>
             カテゴリー
           </div>
-          <div className='text-left'>{category[0]}</div>
+          <div className='text-left'>{categoryMap[category[0]]}</div>
         </div>
         <div className='flex justify-between py-3 border-t-2 summary-border'>
           <div className='text-left flex'>

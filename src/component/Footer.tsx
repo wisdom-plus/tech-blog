@@ -55,7 +55,7 @@ const Footer = () => {
             <li>
               <Link href='https://twitter.com/wisdom_puls_jp'>
                 <svg
-                  className='fill-slate-700'
+                  className='fill-gray-300'
                   xmlns='http://www.w3.org/2000/svg'
                   width='32'
                   height='32'
@@ -66,9 +66,9 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href='https://twitter.com/tomoshi_web'>
+              <Link href='https://twitter.com/wisdom_plus_jp'>
                 <svg
-                  className='fill-slate-700'
+                  className='fill-gray-300'
                   xmlns='http://www.w3.org/2000/svg'
                   width='32'
                   height='32'

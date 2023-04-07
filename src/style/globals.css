@@ -31,3 +31,10 @@
   --tw-text-opacity: 1;
   color: rgb(var(--content2)/var(--tw-text-opacity));
 }
+
+[data-theme="dark"] .icon-color {
+  fill: rgb(var(--gray-11))
+}
+[data-theme="light"] .icon-color {
+  fill: rgb(var(--gray-1))
+}

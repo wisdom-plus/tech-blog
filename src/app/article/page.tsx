@@ -21,7 +21,7 @@ const Root = ({ params, searchParams }: { params: string; searchParams: { page: 
                 </div>
               }
             >
-              <ArticleCardArea category={'design'} searchParams={searchParams} />
+              <ArticleCardArea category={'all'} searchParams={searchParams} />
             </Suspense>
           </div>
         </div>

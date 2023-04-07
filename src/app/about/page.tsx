@@ -26,11 +26,18 @@ const Page = () => {
                 どうか長い目で応援していただけるとうれしいです。よかったら
                 <Link
                   className='link link-ghost link-underline'
-                  href='https://twitter.com/wisdom_puls_jp'
+                  href='https://twitter.com/wisdom_plus_jp'
                 >
                   著者のツイッター
                 </Link>
                 もフォローしてください。
+              </p>
+              <p>
+                当サイトは
+                <Link className='link link-ghost link-underline' href='https://loosedrawing.com/'>
+                  Loose Drawing
+                </Link>
+                様の画像を利用させていただいております。
               </p>
             </article>
           </div>

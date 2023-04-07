@@ -6,7 +6,7 @@ export type article = {
   revisedAt: Date
   title: string
   body: string
-  category: string[]
+  category: Category[]
   tags: string[]
   thumbnail: thumbnail
   published_at: Date
@@ -18,3 +18,5 @@ export type thumbnail = {
   height: number
   width: number
 }
+
+export type Category = 'all' | 'web' | 'design' | 'infra' | 'meeting' | 'license' | 'life' | 'other'

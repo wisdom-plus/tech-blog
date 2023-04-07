@@ -22,7 +22,7 @@ const DarkmodeButton = () => {
               height='32'
               viewBox='0 0 24 24'
               strokeWidth='1.5'
-              className='fill-slate-700'
+              className='fill-gray-300'
             >
               <path
                 strokeLinecap='round'
@@ -32,7 +32,7 @@ const DarkmodeButton = () => {
             </svg>
           ) : (
             <svg
-              className='cursor-pointer fill-slate-700'
+              className='cursor-pointer fill-gray-300'
               xmlns='http://www.w3.org/2000/svg'
               width='32'
               height='32'

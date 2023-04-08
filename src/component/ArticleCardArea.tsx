@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import { use } from 'react'
 import { getBlogList } from '@/api/microcms'
 import ArticleCard from '@/component/ArticleCard'
@@ -13,7 +14,9 @@ const ArticleCardArea = ({
 }) => {
   const offset = searchParams.page ? searchParams.page : 1
   const data = use(getBlogList({ category: category, offset: offset }))
-
+  if (!data) {
+    return notFound()
+  }
   return (
     <div>
       <div className='max-w-7xl h-full w-full flex flex-wrap justify-evenly space-x-3'>

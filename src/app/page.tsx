@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import { getBlogList } from '@/api/microcms'
 import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
@@ -13,6 +14,9 @@ const Root = async ({
 }) => {
   const offset = searchParams.page ? searchParams.page : 1
   const data = await getBlogList({ offset: offset })
+  if (!data) {
+    return notFound()
+  }
   return (
     <>
       <BackImage title='最新の投稿' />

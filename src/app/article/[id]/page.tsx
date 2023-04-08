@@ -1,6 +1,6 @@
 import { load } from 'cheerio'
-import dayjs from 'dayjs'
 import hljs from 'highlight.js'
+import { notFound } from 'next/navigation'
 import { getBlog } from '@/api/microcms'
 import ArticleSummary from '@/component/ArticleSummary'
 import ArticleToc from '@/component/ArticleToc'
@@ -15,6 +15,10 @@ export const metadata = {
 
 const Page = async ({ params }: { params: { id: string } }) => {
   const data = await getBlog(params.id)
+
+  if (!data) {
+    notFound()
+  }
   metadata.title = data.title
 
   const $ = load(data.body)

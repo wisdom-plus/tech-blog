@@ -9,18 +9,26 @@ export const getBlogList = async ({ offset = 1, limit = PER_PAGE, category = 'al
     category == 'all'
       ? `published_at[less_than]${today}`
       : `category[contains]${category}[and]published_at[less_than]${today}]`
-  const res = await client.getList<article>({
-    endpoint: 'blog',
-    queries: {
-      offset: offset_num,
-      limit: limit,
-      filters: fileter,
-    },
-  })
-  return { contents: res.contents, totalCount: res.totalCount }
+  try {
+    const res = await client.getList<article>({
+      endpoint: 'blog',
+      queries: {
+        offset: offset_num,
+        limit: limit,
+        filters: fileter,
+      },
+    })
+    return { contents: res.contents, totalCount: res.totalCount }
+  } catch (error) {
+    return false
+  }
 }
 
 export const getBlog = async (id: string) => {
-  const res = await client.get({ endpoint: 'blog', contentId: id })
-  return res
+  try {
+    const res = await client.get({ endpoint: 'blog', contentId: id })
+    return res
+  } catch (error) {
+    return false
+  }
 }

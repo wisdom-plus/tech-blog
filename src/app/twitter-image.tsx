@@ -12,7 +12,7 @@ const srcUrl = (url: string) => {
   }
 }
 
-const og = () => {
+const twitterImage = () => {
   return new ImageResponse(
     (
       <div
@@ -40,4 +40,4 @@ const og = () => {
   )
 }
 
-export default og
+export default twitterImage

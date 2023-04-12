@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/server'
 import { getBlog } from '@/api/microcms'
 
+export const revalidate = 10
 export const size = { width: 1200, height: 600 }
 export const alt = 'About Acme'
 export const contentType = 'image/png'
@@ -37,10 +38,7 @@ const og = async ({ params }: { params: { id: string } }) => {
         <h1 style={{ margin: '1px' }}>{data.title}</h1>
       </div>
     ),
-    {
-      width: 1200,
-      height: 630,
-    },
+    size,
   )
 }
 

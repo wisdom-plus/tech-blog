@@ -6,9 +6,19 @@ import TopButton from '@/component/TopButton'
 import '@/style/globals.css'
 
 export const metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: 'TechAmply',
   description:
     "TechAmply is a blog about software development, programming, and technology. It's written by a software engineer who loves to learn and share his knowledge.",
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: 'https://techamply.com',
+    siteName: 'TechAmply',
+    title: 'TechAmply',
+    description:
+      "TechAmply is a blog about software development, programming, and technology. It's written by a software engineer who loves to learn and share his knowledge.",
+  },
 }
 
 const merriweather = Merriweather({

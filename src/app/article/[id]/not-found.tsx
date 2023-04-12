@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const PageNotFound = () => {
+const NotFound = () => {
   return (
     <>
       <main className='h-full w-full mx-auto my-20 top-16'>
@@ -28,4 +28,4 @@ const PageNotFound = () => {
   )
 }
 
-export default PageNotFound
+export default NotFound

@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/server'
 
+export const revalidate = 10
 export const size = { width: 1200, height: 600 }
 export const alt = 'About Acme'
 export const contentType = 'image/png'
@@ -33,10 +34,7 @@ const twitterImage = () => {
         Tech Amply
       </div>
     ),
-    {
-      width: 1200,
-      height: 630,
-    },
+    size,
   )
 }
 

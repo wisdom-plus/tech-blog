@@ -26,7 +26,7 @@ export const getBlogList = async ({ offset = 1, limit = PER_PAGE, category = 'al
 
 export const getBlog = async (id: string) => {
   try {
-    const res = await client.get({ endpoint: 'blog', contentId: id })
+    const res = await client.get<article>({ endpoint: 'blog', contentId: id })
     return res
   } catch (error) {
     return false

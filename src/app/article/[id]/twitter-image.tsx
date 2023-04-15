@@ -35,7 +35,7 @@ const og = async ({ params }: { params: { id: string } }) => {
         {/*eslint-disable-next-line @next/next/no-img-element*/}
         <img src={srcUrl('logo.png')} height={380} width={380} alt='logo' />
         <h1 style={{ margin: '10px' }}>Tech Amply</h1>
-        <h1 style={{ margin: '1px' }}>{data.title}</h1>
+        <h1 style={{ margin: '1px' }}>{data ? data.title : 'No Title'}</h1>
       </div>
     ),
     size,

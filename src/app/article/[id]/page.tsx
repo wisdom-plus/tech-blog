@@ -12,6 +12,7 @@ import ShareButton from '@/component/ShareButton'
 export const metadata = {
   title: 'TechAmply | Article',
 }
+export const revalidate = 0
 
 const Page = async ({ params }: { params: { id: string } }) => {
   const data = await getBlog(params.id)
@@ -39,6 +40,17 @@ const Page = async ({ params }: { params: { id: string } }) => {
         <div className='flex flex-row justify-around  h-full w-full mx-auto max-w-7xl gap-10'>
           <div className='flex flex-col w-full mx-auto rounded-xl bg-gray-3 max-w-4xl'>
             <div className='card-body'>
+              <div className='badge-area'>
+                {data.tags.map((tag) => (
+                  <span
+                    className='badge badge-lg text-sm badge-outline-primary mr-2 px-4 py-1'
+                    style={{ color: tag.color, borderColor: tag.color }}
+                    key={tag.id}
+                  >
+                    {tag.title}
+                  </span>
+                ))}
+              </div>
               <div
                 className='prose prose-sm sm:prose'
                 dangerouslySetInnerHTML={{

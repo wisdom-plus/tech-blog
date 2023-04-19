@@ -79,7 +79,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href='https://techamply.com/feed'>
+              <Link href='/feed'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 24 24'

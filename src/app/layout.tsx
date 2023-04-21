@@ -44,6 +44,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     >
       <head>
         <Analytics />
+        <script
+          async
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8331961064970162'
+          crossOrigin='anonymous'
+        ></script>
       </head>
       <body className='leading-normal tracking-normal'>
         <div className='h-full w-full'>

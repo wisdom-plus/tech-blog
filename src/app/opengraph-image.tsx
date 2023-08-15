@@ -6,7 +6,7 @@ export const alt = 'About Acme'
 export const contentType = 'image/png'
 
 const srcUrl = (url: string) => {
-  if (process.env.VERCEL_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     return `https://techamply.com/${url}`
   } else {
     return `http://localhost:3000/${url}`

@@ -7,7 +7,7 @@ type Props = {
   title?: string
 }
 
-const Breadcrumb = ({ title }): Props => {
+const Breadcrumb = ({ title }: Props) => {
   const pathname = usePathname()
   const [paths, setPaths] = useState<string[]>([])
 

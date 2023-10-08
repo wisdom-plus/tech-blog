@@ -33,7 +33,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   return (
     <>
       <div className='mt-2 max-w-7xl w-full h-full justify-center items-center mx-auto'>
-        <Breadcrumb />
+        <Breadcrumb title={data.title} />
         <h1 className='text-4xl text-center pt-12 px-4'>{data.title}</h1>
       </div>
       <main className='h-full w-full mx-auto my-20 top-16'>

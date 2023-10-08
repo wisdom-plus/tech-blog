@@ -9,7 +9,7 @@ export const metadata = {
   metadataBase: new URL('https://techamply.com'),
   title: {
     default: 'TechAmply',
-    template: `%s - ${'TechAmply'}`
+    template: `%s - ${'TechAmply'}`,
   },
   description:
     "TechAmply is a blog about software development, programming, and technology. It's written by a software engineer who loves to learn and share his knowledge.",

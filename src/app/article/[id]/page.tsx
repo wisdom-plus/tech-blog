@@ -22,7 +22,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   }
   metadata.title = data.title
 
-  const $ = load(data.body_test)
+  const $ = load(data.body)
   $('div[data-filename]').each((_, elm) => {
     $(elm).prepend(`<span>${$(elm).data('filename')}</span>`)
   })

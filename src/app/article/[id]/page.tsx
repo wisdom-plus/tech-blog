@@ -1,5 +1,5 @@
 import { load } from 'cheerio'
-import hljs from 'highlight.js'
+import hljs, { HighlightResult } from 'highlight.js'
 import { notFound } from 'next/navigation'
 import { getBlog } from '@/api/microcms'
 import ArticleSummary from '@/component/ArticleSummary'
@@ -23,8 +23,18 @@ const Page = async ({ params }: { params: { id: string } }) => {
   metadata.title = data.title
 
   const $ = load(data.body)
+  $('div[data-filename]').each((_, elm) => {
+    $(elm).prepend(`<span>${$(elm).data('filename')}</span>`)
+  })
   $('pre code').each((_, elm) => {
-    const result = hljs.highlightAuto($(elm).text())
+    const language = $(elm).attr('class') || ''
+    let result: HighlightResult
+
+    if (language == '') {
+      result = hljs.highlightAuto($(elm).text())
+    } else {
+      result = hljs.highlight($(elm).text(), { language: language.replace('language-', '') })
+    }
     $(elm).html(result.value)
     $(elm).addClass('hljs')
   })

@@ -2,9 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    appDir: true,
-  },
   eslint: {
     dirs: ['app', 'pages', 'utils', 'components', 'hooks', 'types', 'public', 'api'],
   },

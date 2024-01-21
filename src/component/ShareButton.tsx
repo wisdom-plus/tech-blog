@@ -20,11 +20,7 @@ const ShareButton = ({ data }: { data: { title: string; id: string } }) => {
       >
         <TwitterIcon size={32} round={true} />
       </TwitterShareButton>
-      <FacebookShareButton
-        url={`https://techamply.com/article/${data.id}`}
-        quote={data.title}
-        className='mr-2'
-      >
+      <FacebookShareButton url={`https://techamply.com/article/${data.id}`} className='mr-2'>
         <FacebookIcon size={32} round={true} />
       </FacebookShareButton>
       <EmailShareButton

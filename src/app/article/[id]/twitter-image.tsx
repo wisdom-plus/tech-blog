@@ -1,4 +1,4 @@
-import { ImageResponse } from 'next/server'
+import { ImageResponse } from 'next/og'
 import { getBlog } from '@/api/microcms'
 
 export const runtime = 'edge'

@@ -8,7 +8,7 @@ import {
   HatenaIcon,
   EmailShareButton,
   EmailIcon,
-} from 'react-share'
+} from 'next-share'
 
 const ShareButton = ({ data }: { data: { title: string; id: string } }) => {
   return (

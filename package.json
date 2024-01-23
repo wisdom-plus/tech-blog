@@ -29,7 +29,6 @@
     "prettier": "^3.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-share": "^5.0.3",
     "rippleui": "^1.12.1",
     "sass": "^1.70.0",
     "typescript": "5.3.3"

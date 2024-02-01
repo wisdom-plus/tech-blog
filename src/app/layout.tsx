@@ -1,4 +1,5 @@
 import { Merriweather, Merriweather_Sans } from '@next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import Analytics from '@/component/Analytics'
 import Footer from '@/component/Footer'
 import HeaderNav from '@/component/HeaderNav'
@@ -59,6 +60,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           {children}
           <TopButton />
           <Footer />
+          <SpeedInsights />
         </div>
       </body>
     </html>

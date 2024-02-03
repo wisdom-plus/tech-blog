@@ -1,5 +1,3 @@
-import { load } from 'cheerio'
-import hljs, { HighlightResult } from 'highlight.js'
 import { notFound } from 'next/navigation'
 import { getBlog } from '@/api/microcms'
 import ArticleSummary from '@/component/ArticleSummary'
@@ -7,7 +5,9 @@ import ArticleToc from '@/component/ArticleToc'
 import Breadcrumb from '@/component/Breadcrumb'
 import '@/style/typography.scss'
 import 'highlight.js/styles/github-dark.css'
+import MarkdownArea from '@/component/MarkdownArea'
 import ShareButton from '@/component/ShareButton'
+import TagArea from '@/component/TagArea'
 
 export const metadata = {
   title: 'TechAmply | Article',
@@ -22,24 +22,6 @@ const Page = async ({ params }: { params: { id: string } }) => {
   }
   metadata.title = data.title
 
-  const $ = load(data.body)
-  $('div[data-filename]').each((_, elm) => {
-    $(elm).prepend(`<span>${$(elm).data('filename')}</span>`)
-  })
-  $('pre code').each((_, elm) => {
-    const language = $(elm).attr('class') || ''
-    let result: HighlightResult
-
-    if (language == '') {
-      result = hljs.highlightAuto($(elm).text())
-    } else {
-      result = hljs.highlight($(elm).text(), { language: language.replace('language-', '') })
-    }
-    $(elm).html(result.value)
-    $(elm).addClass('hljs')
-  })
-  data.body = $.html()
-
   return (
     <>
       <div className='mt-2 max-w-7xl w-full h-full justify-center items-center mx-auto'>
@@ -50,23 +32,8 @@ const Page = async ({ params }: { params: { id: string } }) => {
         <div className='flex flex-row justify-around  h-full w-full mx-auto max-w-7xl gap-10'>
           <div className='flex flex-col w-full mx-auto rounded-xl bg-gray-3 max-w-4xl'>
             <div className='card-body'>
-              <div className='badge-area'>
-                {data.tags.map((tag) => (
-                  <span
-                    className='badge badge-lg text-sm badge-outline-primary mr-2 px-4 py-1'
-                    style={{ color: tag.color, borderColor: tag.color }}
-                    key={tag.id}
-                  >
-                    {tag.title}
-                  </span>
-                ))}
-              </div>
-              <div
-                className='prose prose-sm sm:prose'
-                dangerouslySetInnerHTML={{
-                  __html: `${data.body}`,
-                }}
-              />
+              <TagArea tags={data.tags} />
+              <MarkdownArea body={data.body} />
             </div>
           </div>
           <div className='flex flex-col w-full mx-auto max-w-sm'>

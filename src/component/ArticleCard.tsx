@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
+import TagArea from '@/component/TagArea'
 import { article } from '@/types/index'
 import type { thumbnail } from '@/types/index'
 
@@ -41,6 +42,7 @@ const ArticleCard = ({ article }: { article: article }) => {
       />
       <div className='card-body'>
         <h2 className='card-header'>{article.title}</h2>
+        <TagArea tags={article.tags} />
         <div className='text-right'>{dayjs(article.published_at).format('YYYY.MM.DD')}</div>
       </div>
     </Link>

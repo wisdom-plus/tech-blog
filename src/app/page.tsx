@@ -3,7 +3,7 @@ import { getBlogList } from '@/api/microcms'
 import ArticleCard from '@/component/ArticleCard'
 import BackImage from '@/component/BackImage'
 import Pagination from '@/component/Pagination'
-import { PER_PAGE } from '@/consts'
+import { PER_PAGE } from '@/constants'
 
 const Root = async ({
   params,

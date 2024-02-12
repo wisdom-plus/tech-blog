@@ -3,7 +3,7 @@ import { use } from 'react'
 import { getBlogList } from '@/api/microcms'
 import ArticleCard from '@/component/ArticleCard'
 import Pagination from '@/component/Pagination'
-import { PER_PAGE } from '@/consts'
+import { PER_PAGE } from '@/constants'
 
 const ArticleCardArea = ({
   category,

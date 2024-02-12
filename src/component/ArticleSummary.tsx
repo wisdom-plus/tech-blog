@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { categoryMap } from '@/consts'
+import { categoryMap } from '@/constants'
 import { Category } from '@/types'
 
 const AritcleSummary = ({

@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useSearchParams, usePathname } from 'next/navigation'
+import { PER_PAGE } from '@/constants'
 
 const Pagination = ({ count }: { count: number }) => {
   const pathname = usePathname()
@@ -13,7 +14,7 @@ const Pagination = ({ count }: { count: number }) => {
     }
   }
   const range = (start: number, end: number) => [...Array(end - start + 1)].map((_, i) => start + i)
-  const range_count = Math.ceil(count / 3)
+  const range_count = Math.ceil(count / PER_PAGE)
 
   const paginationURL = (page: number) => {
     return `${pathname}?page=${page}`

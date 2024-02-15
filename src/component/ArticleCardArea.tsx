@@ -8,12 +8,14 @@ import { PER_PAGE } from '@/constants'
 const ArticleCardArea = ({
   category,
   searchParams,
+  tagId,
 }: {
-  category: string
+  category?: string
   searchParams: { page: number }
+  tagId?: string
 }) => {
   const offset = searchParams.page ? searchParams.page : 1
-  const data = use(getBlogList({ category: category, offset: offset }))
+  const data = use(getBlogList({ category: category, offset: offset, tagId: tagId }))
   if (!data) {
     return notFound()
   }

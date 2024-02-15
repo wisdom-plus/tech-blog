@@ -32,20 +32,24 @@ const defaultImageUrl = (category: string) => {
 
 const ArticleCard = ({ article }: { article: article }) => {
   return (
-    <Link href={`/article/${article.id}`} className='card card-image-cover max-w-4sm mb-8'>
-      <Image
-        src={setUrl(article.thumbnail, article.category)}
-        alt='サムネイル'
-        width='500'
-        height='500'
-        className='aspect-square object-contain'
-      />
-      <div className='card-body'>
-        <h2 className='card-header'>{article.title}</h2>
+    <div className='card card-image-cover max-w-4sm mb-8'>
+      <Link href={`/article/${article.id}`}>
+        <Image
+          src={setUrl(article.thumbnail, article.category)}
+          alt='サムネイル'
+          width='500'
+          height='500'
+          className='aspect-square object-contain'
+        />
+        <div className='card-body'>
+          <h2 className='card-header'>{article.title}</h2>
+        </div>
+      </Link>
+      <div className='card-footer px-8 pb-8 gap-2 flex-col items-stretch'>
         <TagArea tags={article.tags} />
         <div className='text-right'>{dayjs(article.published_at).format('YYYY.MM.DD')}</div>
       </div>
-    </Link>
+    </div>
   )
 }
 

@@ -18,6 +18,9 @@ const MarkdownArea = ({ body }: { body: string }) => {
     $(elm).html(result.value)
     $(elm).addClass('hljs')
   })
+  $('a').each((_, elm) => {
+    $(elm).addClass('link link-primary link-underline-hover not-prose')
+  })
   const markdown = $.html()
 
   return (

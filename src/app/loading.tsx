@@ -1,5 +1,6 @@
 import BackImage from '@/component/BackImage'
-import LoadSpinner from '@/component/LoadSpinner'
+import SkeletonCards from '@/component/SkeletonCards'
+import { PER_PAGE } from '@/constants'
 
 const Loading = () => {
   return (
@@ -9,7 +10,9 @@ const Loading = () => {
         <div className='flex flex-row justify-center items-center h-full w-full mx-auto max-w-7xl'>
           <div className='flex flex-col h-full w-full'>
             <div className='max-w-7xl h-full w-full flex flex-wrap justify-evenly space-x-3'>
-              <LoadSpinner />
+              {Array.from(Array(PER_PAGE), (i) => {
+                return <SkeletonCards key={i} />
+              })}
             </div>
           </div>
         </div>

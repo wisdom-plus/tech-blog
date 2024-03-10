@@ -37,6 +37,11 @@ export const getBlogList = async ({
         limit: limit,
         filters: filter,
       },
+      customRequestInit: {
+        next: {
+          revalidate: 60,
+        },
+      },
     })
     return { contents: res.contents, totalCount: res.totalCount }
   } catch (error) {
@@ -46,7 +51,15 @@ export const getBlogList = async ({
 
 export const getBlog = async (id: string) => {
   try {
-    const res = await client.get<article>({ endpoint: 'blog', contentId: id })
+    const res = await client.get<article>({
+      endpoint: 'blog',
+      contentId: id,
+      customRequestInit: {
+        next: {
+          revalidate: 60,
+        },
+      },
+    })
     return res
   } catch (error) {
     return false
@@ -60,6 +73,11 @@ export const getTagList = async ({ offset = 1, limit = PER_PAGE }) => {
     const res = await client.getList<tag>({
       endpoint: 'tags',
       queries: { limit: limit, offset: offset_num },
+      customRequestInit: {
+        next: {
+          revalidate: 60,
+        },
+      },
     })
     return { contents: res.contents, totalCount: res.totalCount }
   } catch (error) {

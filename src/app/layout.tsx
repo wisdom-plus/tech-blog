@@ -1,5 +1,5 @@
-import { Merriweather, Merriweather_Sans } from '@next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Merriweather, Merriweather_Sans } from 'next/font/google'
 import Analytics from '@/component/Analytics'
 import Footer from '@/component/Footer'
 import HeaderNav from '@/component/HeaderNav'

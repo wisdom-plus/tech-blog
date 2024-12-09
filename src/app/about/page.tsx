@@ -26,7 +26,7 @@ const Page = () => {
                 どうか長い目で応援していただけるとうれしいです。よかったら
                 <Link
                   className='link link-ghost link-underline'
-                  href='https://twitter.com/wisdom_plus_jp'
+                  href='https://x.com/wisdom_plus_jp'
                 >
                   著者のツイッター
                 </Link>

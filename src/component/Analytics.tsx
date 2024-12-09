@@ -2,7 +2,7 @@
 
 import { usePathname, useSearchParams } from 'next/navigation'
 import Script from 'next/script'
-import { Suspense, useEffect } from 'react'
+import { Suspense, useEffect, type JSX } from 'react'
 import { GA_ID, pageview } from 'lib/gtag'
 
 const GoogleAnalytics = () => {

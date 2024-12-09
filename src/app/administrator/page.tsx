@@ -42,7 +42,7 @@ const Page = () => {
                     xmlns='http://www.w3.org/2000/svg'
                     fill='none'
                     viewBox='0 0 24 24'
-                    stroke-width='1.5'
+                    strokeWidth='1.5'
                     stroke='currentColor'
                   >
                     <path
@@ -63,7 +63,7 @@ const Page = () => {
                     xmlns='http://www.w3.org/2000/svg'
                     fill='none'
                     viewBox='0 0 24 24'
-                    stroke-width='1.5'
+                    strokeWidth='1.5'
                     stroke='currentColor'
                   >
                     <path
@@ -94,7 +94,7 @@ const Page = () => {
                     xmlns='http://www.w3.org/2000/svg'
                     fill='none'
                     viewBox='0 0 24 24'
-                    stroke-width='1.5'
+                    strokeWidth='1.5'
                     stroke='currentColor'
                   >
                     <path
@@ -119,7 +119,7 @@ const Page = () => {
                     xmlns='http://www.w3.org/2000/svg'
                     fill='none'
                     viewBox='0 0 24 24'
-                    stroke-width='1.5'
+                    strokeWidth='1.5'
                     stroke='currentColor'
                   >
                     <path
@@ -142,7 +142,7 @@ const Page = () => {
           <div className='mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center'>
             <Link
               className='link mr-6'
-              href='https://twitter.com/wisdom_plus_jp'
+              href='https://x.com/wisdom_plus_jp'
               data-tippy-content='@twitter_handle'
             >
               <svg
@@ -157,7 +157,7 @@ const Page = () => {
             </Link>
             <Link
               className='link'
-              href='https//github.com/tomoron'
+              href='https://github.com/wisdom-plus'
               data-tippy-content='@github_handle'
             >
               <svg

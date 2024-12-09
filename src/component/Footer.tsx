@@ -53,7 +53,7 @@ const Footer = () => {
           <h2 className='mb-6 text-sm font-semibold uppercase'>Links</h2>
           <ul className='flex flex-row gap-4 text-content2'>
             <li>
-              <Link href='https://twitter.com/wisdom_puls_jp'>
+              <Link href='https://github.com/wisdom-plus'>
                 <svg
                   className='fill-gray-300'
                   xmlns='http://www.w3.org/2000/svg'
@@ -66,7 +66,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href='https://twitter.com/wisdom_plus_jp'>
+              <Link href='https://x.com/wisdom_plus_jp'>
                 <svg
                   viewBox='0 0 24 24'
                   xmlns='http://www.w3.org/2000/svg'

@@ -17,7 +17,7 @@ const ArticleToc = ({ body }: { body: string }) => {
   const toc = headings.map((data) => ({
     text: $(data).text(),
     id: $(data).attr('id'),
-    rank: $(data).prop('tagName').toLowerCase(),
+    rank: $(data).prop('tagName')?.toLowerCase() || 'h1',
   }))
 
   return (

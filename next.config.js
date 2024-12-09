@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   eslint: {
     dirs: ['app', 'pages', 'utils', 'components', 'hooks', 'types', 'public', 'api'],
   },

@@ -5,13 +5,11 @@ export const metadata = {
   title: 'TechAmply | Web',
 }
 
-const Page = async ({
-  params,
-  searchParams,
-}: {
-  params: string
-  searchParams: { page: number }
+const Page = async (props: {
+  params: Promise<string>
+  searchParams: Promise<{ page: number }>
 }) => {
+  const searchParams = await props.searchParams
   return (
     <>
       <BackImage title='Web' />

@@ -5,13 +5,11 @@ import ArticleCardArea from '@/component/ArticleCardArea'
 import BackImage from '@/component/BackImage'
 import SkeletonCards from '@/component/SkeletonCards'
 
-const Root = async ({
-  params,
-  searchParams,
-}: {
-  params: string
-  searchParams: { page: number }
+const Root = async (props: {
+  params: Promise<string>
+  searchParams: Promise<{ page: number }>
 }) => {
+  const searchParams = await props.searchParams
   const offset = searchParams.page ? searchParams.page : 1
   const data = await getBlogList({ offset: offset })
   if (!data) {

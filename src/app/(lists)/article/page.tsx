@@ -5,7 +5,11 @@ export const metadata = {
   title: 'TechAmply | Article',
 }
 
-const Root = ({ params, searchParams }: { params: string; searchParams: { page: number } }) => {
+const Root = async (props: {
+  params: Promise<string>
+  searchParams: Promise<{ page: number }>
+}) => {
+  const searchParams = await props.searchParams
   return (
     <>
       <BackImage title='最新の投稿' />

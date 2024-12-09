@@ -14,7 +14,8 @@ export const metadata = {
 }
 export const revalidate = 0
 
-const Page = async ({ params }: { params: { id: string } }) => {
+const Page = async (props: { params: Promise<{ id: string }> }) => {
+  const params = await props.params
   const data = await getBlog(params.id)
 
   if (!data) {

@@ -1,9 +1,9 @@
 export type article = {
   id: string
-  createdAT: Date
-  updatedAt: Date
-  publishedAt: Date
-  revisedAt: Date
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
+  revisedAt: string
   title: string
   body: string
   category: Category[]

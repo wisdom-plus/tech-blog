@@ -1,4 +1,8 @@
-const WaningAlert = ({ year }: { year: number }) => {
+import { getPassedYear } from '@/lib/date'
+
+const WaningAlert = ({ date }: { date: string }) => {
+  const year = getPassedYear(date)
+
   return (
     <div className='alert alert-warning'>
       <svg

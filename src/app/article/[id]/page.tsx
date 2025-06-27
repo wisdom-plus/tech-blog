@@ -9,6 +9,7 @@ import MarkdownArea from '@/component/MarkdownArea'
 import ShareButton from '@/component/ShareButton'
 import TagArea from '@/component/TagArea'
 import WaningAlert from '@/component/WaningAlert'
+import { isOverOneYearAgo } from '@/lib/date'
 
 export const metadata = {
   title: 'TechAmply | Article',
@@ -23,10 +24,6 @@ const Page = async (props: { params: Promise<{ id: string }> }) => {
     notFound()
   }
 
-  const newYear = new Date().getFullYear()
-  const articleYear = new Date(data.updatedAt).getFullYear()
-  const yearsPassed = newYear - articleYear
-
   metadata.title = data.title
 
   return (
@@ -39,7 +36,7 @@ const Page = async (props: { params: Promise<{ id: string }> }) => {
         <div className='flex flex-row justify-around  h-full w-full mx-auto max-w-7xl gap-10'>
           <div className='flex flex-col w-full mx-auto rounded-xl bg-gray-3 max-w-4xl'>
             <div className='card-body'>
-              {yearsPassed >= 1 && <WaningAlert year={yearsPassed} />}
+              {isOverOneYearAgo(data.createdAt) && <WaningAlert date={data.createdAt} />}
               <TagArea tags={data.tags} />
               <MarkdownArea body={data.body} />
             </div>

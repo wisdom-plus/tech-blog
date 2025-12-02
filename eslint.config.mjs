@@ -1,3 +1,5 @@
+import nextTypescript from "eslint-config-next/typescript";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
 import _import from "eslint-plugin-import";
 import unusedImports from "eslint-plugin-unused-imports";
@@ -14,7 +16,7 @@ const compat = new FlatCompat({
     allConfig: js.configs.all
 });
 
-export default [...fixupConfigRules(compat.extends(
+export default [...nextTypescript, ...fixupConfigRules(compat.extends(
     "next/core-web-vitals",
     "plugin:import/typescript",
     "plugin:import/recommended",
@@ -35,4 +37,6 @@ export default [...fixupConfigRules(compat.extends(
 
         "@next/next/no-html-link-for-pages": ["error", "src/app"],
     },
+}, {
+    ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"]
 }];

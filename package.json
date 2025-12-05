@@ -7,11 +7,9 @@
     "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src",
-    "lint:fix": "npm run lint --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "lint": "npm exec biome lint",
+    "lint:fix": "npm exec biome lint --fix",
+    "format": "npm exec biome format"
   },
   "dependencies": {
     "@types/node": "24.0.15",

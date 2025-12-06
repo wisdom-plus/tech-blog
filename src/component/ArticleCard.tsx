@@ -2,10 +2,9 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import TagArea from '@/component/TagArea'
-import { article } from '@/types/index'
-import type { thumbnail } from '@/types/index'
+import { Article, Thumbnail } from '@/types/index'
 
-const setUrl = (thumbnail: thumbnail, category: string[]) => {
+const setUrl = (thumbnail: Thumbnail, category: string[]) => {
   if (thumbnail != undefined) {
     return thumbnail.url ? thumbnail.url : defaultImageUrl(category[0])
   } else {
@@ -30,7 +29,7 @@ const defaultImageUrl = (category: string) => {
   }
 }
 
-const ArticleCard = ({ article }: { article: article }) => {
+const ArticleCard = ({ article }: { article: Article }) => {
   return (
     <div className='card card-image-cover max-w-4sm mb-8'>
       <Link href={`/article/${article.id}`}>

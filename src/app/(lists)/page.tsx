@@ -1,9 +1,7 @@
 import { notFound } from 'next/navigation'
-import { Suspense } from 'react'
 import { getBlogList } from '@/api/microcms'
 import ArticleCardArea from '@/component/ArticleCardArea'
 import BackImage from '@/component/BackImage'
-import SkeletonCards from '@/component/SkeletonCards'
 
 const Root = async (props: {
   params: Promise<string>

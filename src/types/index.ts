@@ -1,4 +1,4 @@
-export type article = {
+export type Article = {
   id: string
   createdAt: string
   updatedAt: string
@@ -7,19 +7,19 @@ export type article = {
   title: string
   body: string
   category: Category[]
-  tags: tag[]
-  thumbnail: thumbnail
+  tags: Tag[]
+  thumbnail: Thumbnail
   published_at: Date
   readtime: number
 }
 
-export type thumbnail = {
+export type Thumbnail = {
   url: string
   height: number
   width: number
 }
 
-export type tag = {
+export type Tag = {
   id: string
   title: string
   color: string

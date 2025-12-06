@@ -1,5 +1,5 @@
 import { PER_PAGE, OFFSET } from '@/constants/index'
-import { article, tag } from '@/types/index'
+import { Article, Tag } from '@/types/index'
 import { client } from 'lib/client'
 
 type getBlogListProps = {
@@ -30,7 +30,7 @@ export const getBlogList = async ({
   const filter = filters.join('[and]')
 
   try {
-    const res = await client.getList<article>({
+    const res = await client.getList<Article>({
       endpoint: 'blog',
       queries: {
         offset: offset_num,
@@ -44,14 +44,14 @@ export const getBlogList = async ({
       },
     })
     return { contents: res.contents, totalCount: res.totalCount }
-  } catch (error) {
+  } catch (_error) {
     return false
   }
 }
 
 export const getBlog = async (id: string) => {
   try {
-    const res = await client.get<article>({
+    const res = await client.get<Article>({
       endpoint: 'blog',
       contentId: id,
       customRequestInit: {
@@ -61,7 +61,7 @@ export const getBlog = async (id: string) => {
       },
     })
     return res
-  } catch (error) {
+  } catch (_error) {
     return false
   }
 }
@@ -70,7 +70,7 @@ export const getTagList = async ({ offset = 1, limit = PER_PAGE }) => {
   const offset_num = OFFSET(offset)
 
   try {
-    const res = await client.getList<tag>({
+    const res = await client.getList<Tag>({
       endpoint: 'tags',
       queries: { limit: limit, offset: offset_num },
       customRequestInit: {
@@ -80,7 +80,7 @@ export const getTagList = async ({ offset = 1, limit = PER_PAGE }) => {
       },
     })
     return { contents: res.contents, totalCount: res.totalCount }
-  } catch (error) {
+  } catch (_error) {
     return false
   }
 }

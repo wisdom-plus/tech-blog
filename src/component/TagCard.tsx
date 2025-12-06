@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { tag } from '@/types/index'
+import { Tag } from '@/types/index'
 
-const TagCard = ({ tag }: { tag: tag }) => {
+const TagCard = ({ tag }: { tag: Tag }) => {
   return (
     <div className='card card-image-cover max-w-4sm mb-8'>
       <Link

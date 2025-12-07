@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import {
   TwitterShareButton,
   TwitterIcon,
@@ -8,33 +8,39 @@ import {
   HatenaIcon,
   EmailShareButton,
   EmailIcon,
-} from 'next-share'
+} from "next-share";
 
 const ShareButton = ({ data }: { data: { title: string; id: string } }) => {
   return (
-    <div className='flex flex-row gap-4 mt-4 justify-center'>
+    <div className="flex flex-row gap-4 mt-4 justify-center">
       <TwitterShareButton
         url={`https://techamply.com/article/${data.id}`}
         title={data.title}
-        className='mr-2'
+        className="mr-2"
       >
         <TwitterIcon size={32} round={true} />
       </TwitterShareButton>
-      <FacebookShareButton url={`https://techamply.com/article/${data.id}`} className='mr-2'>
+      <FacebookShareButton
+        url={`https://techamply.com/article/${data.id}`}
+        className="mr-2"
+      >
         <FacebookIcon size={32} round={true} />
       </FacebookShareButton>
       <EmailShareButton
         url={`https://techamply.com/article/${data.id}`}
         subject={data.title}
-        className='mr-2'
+        className="mr-2"
       >
         <EmailIcon size={32} round={true} />
       </EmailShareButton>
-      <HatenaShareButton url={`https://techamply.com/article/${data.id}`} title={data.title}>
+      <HatenaShareButton
+        url={`https://techamply.com/article/${data.id}`}
+        title={data.title}
+      >
         <HatenaIcon size={32} round={true} />
       </HatenaShareButton>
     </div>
-  )
-}
+  );
+};
 
-export default ShareButton
+export default ShareButton;

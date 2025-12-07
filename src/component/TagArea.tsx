@@ -1,8 +1,8 @@
 'use client'
 import Link from 'next/link'
-import type { tag } from '../types'
+import type { Tag } from '../types'
 
-const TagArea = ({ tags }: { tags: tag[] }) => {
+const TagArea = ({ tags }: { tags: Tag[] }) => {
   return (
     <div className='badge-area'>
       {tags.map((tag) => (

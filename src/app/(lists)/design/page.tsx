@@ -1,27 +1,27 @@
-import ArticleCardArea from '@/component/ArticleCardArea'
-import BackImage from '@/component/BackImage'
+import ArticleCardArea from "@/component/ArticleCardArea";
+import BackImage from "@/component/BackImage";
 
 export const metadata = {
-  title: 'TechAmply | デザイン',
-}
+  title: "TechAmply | デザイン",
+};
 
 const Page = async (props: {
-  params: Promise<string>
-  searchParams: Promise<{ page: number }>
+  params: Promise<string>;
+  searchParams: Promise<{ page: number }>;
 }) => {
-  const searchParams = await props.searchParams
+  const searchParams = await props.searchParams;
   return (
     <>
-      <BackImage title='デザイン' />
-      <main className='container h-full w-full mx-auto my-20 top-16'>
-        <div className='flex flex-row justify-center items-center h-full w-full mx-auto max-w-7xl'>
-          <div className='flex flex-col h-full w-full'>
-            <ArticleCardArea category={'design'} searchParams={searchParams} />
+      <BackImage title="デザイン" />
+      <main className="container h-full w-full mx-auto my-20 top-16">
+        <div className="flex flex-row justify-center items-center h-full w-full mx-auto max-w-7xl">
+          <div className="flex flex-col h-full w-full">
+            <ArticleCardArea category={"design"} searchParams={searchParams} />
           </div>
         </div>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

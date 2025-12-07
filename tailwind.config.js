@@ -2,22 +2,22 @@
 
 module.exports = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './src/**/*.{js,ts,jsx,tsx}',
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        merriweather: 'var(--font-merriweather)',
-        merrisans: 'var(--font-merriweather-sans)',
+        merriweather: "var(--font-merriweather)",
+        merrisans: "var(--font-merriweather-sans)",
       },
       minHeight: {
-        210: '260px',
+        210: "260px",
       },
     },
   },
-  darkMode: 'class',
-  plugins: [require('rippleui'), require('@tailwindcss/typography')],
-}
+  darkMode: "class",
+  plugins: [require("rippleui"), require("@tailwindcss/typography")],
+};

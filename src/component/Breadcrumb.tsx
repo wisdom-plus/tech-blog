@@ -30,7 +30,7 @@ const Breadcrumb = ({ title }: Props) => {
         </li>
         {paths.map((path, index) => (
           <li key={index}>
-            {index == paths.length - 1 ? path : <Link href={`/${path}`}>{path}</Link>}
+            {index === paths.length - 1 ? path : <Link href={`/${path}`}>{path}</Link>}
           </li>
         ))}
       </ul>

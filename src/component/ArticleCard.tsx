@@ -5,7 +5,7 @@ import TagArea from '@/component/TagArea'
 import { Article, Thumbnail } from '@/types/index'
 
 const setUrl = (thumbnail: Thumbnail, category: string[]) => {
-  if (thumbnail != undefined) {
+  if (thumbnail !== undefined) {
     return thumbnail.url ? thumbnail.url : defaultImageUrl(category[0])
   } else {
     return defaultImageUrl(category[0])

@@ -1,8 +1,8 @@
 import dayjs from 'dayjs'
 import { categoryMap } from '@/constants'
-import { Category } from '@/types'
+import type { Category } from '@/types'
 
-const AritcleSummary = ({
+const ArticleSummary = ({
   published_at,
   readtime,
   category,
@@ -99,4 +99,4 @@ const AritcleSummary = ({
   )
 }
 
-export default AritcleSummary
+export default ArticleSummary

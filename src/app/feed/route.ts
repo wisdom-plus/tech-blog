@@ -21,13 +21,13 @@ export const GET = async () => {
     author: {
       name: 'wisdom+',
     },
-    feed: baseUrl() + '/feed',
+    feed: `${baseUrl()}/feed`,
   })
 
   const blogList = await getBlogList({})
   if (blogList) {
     blogList.contents.forEach((blog) => {
-      const url = baseUrl() + '/article/' + blog.id
+      const url = `${baseUrl()}/article/${blog.id}`
       feed.addItem({
         title: blog.title,
         id: url,

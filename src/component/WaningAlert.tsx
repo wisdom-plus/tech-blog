@@ -11,6 +11,8 @@ const WaningAlert = ({ date }: { date: string }) => {
         viewBox='0 0 40 35'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
+        role='img'
+        aria-label='警告アイコン'
       >
         <path
           fillRule='evenodd'

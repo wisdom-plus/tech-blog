@@ -24,7 +24,7 @@ const Pagination = ({ count }: { count: number }) => {
     <div className='pagination flex justify-center mt-4'>
       {range(1, range_count).map((item, index) => (
         <Link href={paginationURL(item)} key={index}>
-          <div className={page() == item ? 'btn btn-active' : 'btn'}>{item}</div>
+          <div className={page() === item ? 'btn btn-active' : 'btn'}>{item}</div>
         </Link>
       ))}
     </div>

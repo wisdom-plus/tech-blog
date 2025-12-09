@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import Image from 'next/image'
 
 export const runtime = 'edge'
 export const revalidate = 10
@@ -30,8 +31,7 @@ const twitterImage = () => {
           fontWeight: 600,
         }}
       >
-        {/*eslint-disable-next-line @next/next/no-img-element*/}
-        <img src={srcUrl('logo.png')} height={400} width={400} alt='logo' />
+        <Image src={srcUrl('logo.png')} height={400} width={400} alt='logo' />
         Tech Amply
       </div>
     ),

@@ -41,7 +41,11 @@ const merriweather_sans = Merriweather_Sans({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html className={`${merriweather.variable} ${merriweather_sans.variable}`} data-theme='dark'>
+    <html
+      lang='ja'
+      className={`${merriweather.variable} ${merriweather_sans.variable}`}
+      data-theme='dark'
+    >
       <head>
         <Analytics />
         <script

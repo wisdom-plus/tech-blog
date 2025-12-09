@@ -2,7 +2,7 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import TagArea from '@/component/TagArea'
-import { Article, Thumbnail } from '@/types/index'
+import type { Article, Thumbnail } from '@/types/index'
 
 const setUrl = (thumbnail: Thumbnail, category: string[]) => {
   if (thumbnail !== undefined) {

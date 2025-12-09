@@ -14,7 +14,7 @@ const DarkmodeButton = () => {
   return (
     <>
       <div className='dropdown'>
-        <label className='flex' area-label='Toggle Dark Mode' tabIndex={0}>
+        <label className='flex' aria-label='Toggle Dark Mode'>
           {theme === 'dark' ? (
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -23,6 +23,8 @@ const DarkmodeButton = () => {
               viewBox='0 0 24 24'
               strokeWidth='1.5'
               className='fill-gray-300'
+              role='img'
+              aria-label='ダークモードのアイコン'
             >
               <path
                 strokeLinecap='round'
@@ -37,6 +39,8 @@ const DarkmodeButton = () => {
               width='32'
               height='32'
               viewBox='0 0 24 24'
+              role='img'
+              aria-label='ライトモードのアイコン'
             >
               <path d='M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z'></path>
             </svg>
@@ -44,6 +48,7 @@ const DarkmodeButton = () => {
         </label>
         <div className='dropdown-menu mt-2 w-32 rounded-lg border border-border'>
           <button
+            type='button'
             onClick={() =>
               setTheme(() => {
                 document.documentElement.dataset.theme = 'light'
@@ -59,6 +64,8 @@ const DarkmodeButton = () => {
                 strokeWidth={1.5}
                 stroke='currentColor'
                 className='w-6 h-6'
+                role='img'
+                aria-label='ライトモードのアイコン'
               >
                 <path
                   strokeLinecap='round'
@@ -70,6 +77,7 @@ const DarkmodeButton = () => {
             </span>
           </button>
           <button
+            type='button'
             onClick={() =>
               setTheme(() => {
                 document.documentElement.dataset.theme = 'dark'
@@ -84,6 +92,8 @@ const DarkmodeButton = () => {
                 strokeWidth='1.5'
                 stroke='currentColor'
                 className='w-6 h-6'
+                role='img'
+                aria-label='ダークモードのアイコン'
               >
                 <path
                   strokeLinecap='round'
@@ -115,6 +125,8 @@ const DarkmodeButton = () => {
                 strokeWidth={1.5}
                 stroke='currentColor'
                 className='w-6 h-6'
+                role='img'
+                aria-label='システムモードのアイコン'
               >
                 <path
                   strokeLinecap='round'

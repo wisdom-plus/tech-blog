@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Tag } from '@/types/index'
+import type { Tag } from '@/types/index'
 
 const TagCard = ({ tag }: { tag: Tag }) => {
   return (

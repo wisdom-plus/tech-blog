@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import Image from 'next/image'
 import { getBlog } from '@/api/microcms'
 
 export const runtime = 'edge'
@@ -33,8 +34,7 @@ const og = async ({ params }: { params: { id: string } }) => {
             fontWeight: 600,
           }}
         >
-          {/*eslint-disable-next-line @next/next/no-img-element*/}
-          <img src={srcUrl('logo.png')} height={380} width={380} alt='logo' />
+          <Image src={srcUrl('logo.png')} height={380} width={380} alt='logo' />
           <h1 style={{ margin: '10px' }}>Tech Amply</h1>
           <h1 style={{ margin: '1px' }}>{data ? data.title : 'No Title'}</h1>
         </div>

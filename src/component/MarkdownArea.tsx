@@ -10,7 +10,7 @@ const MarkdownArea = ({ body }: { body: string }) => {
     const language = $(elm).attr('class') || ''
     let result: HighlightResult
 
-    if (language == '') {
+    if (language === '') {
       result = hljs.highlightAuto($(elm).text())
     } else {
       result = hljs.highlight($(elm).text(), { language: language.replace('language-', '') })

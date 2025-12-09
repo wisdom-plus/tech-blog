@@ -19,6 +19,8 @@ const TopButton = () => {
           strokeWidth={1.5}
           stroke='currentColor'
           className='w-6 h-6 fill-slate-7'
+          role='img'
+          aria-label='戻るボタンのアイコン'
         >
           <path
             strokeLinecap='round'

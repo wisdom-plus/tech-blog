@@ -23,6 +23,8 @@ const ArticleSummary = ({
               strokeWidth={1.5}
               stroke='currentColor'
               className='w-5 h-5 mt-0.5 mr-1'
+              role='img'
+              aria-label='著者のアイコン'
             >
               <path
                 strokeLinecap='round'
@@ -43,6 +45,8 @@ const ArticleSummary = ({
               strokeWidth={1.5}
               stroke='currentColor'
               className='w-5 h-5 mt-0 mr-1'
+              role='img'
+              aria-label='カテゴリーのアイコン'
             >
               <path
                 strokeLinecap='round'
@@ -63,6 +67,8 @@ const ArticleSummary = ({
               strokeWidth={1.5}
               stroke='currentColor'
               className='w-5 h-5 mt-0.5 mr-1'
+              role='img'
+              aria-label='公開日のアイコン'
             >
               <path
                 strokeLinecap='round'
@@ -83,6 +89,8 @@ const ArticleSummary = ({
               strokeWidth={1.5}
               stroke='currentColor'
               className='w-5 h-5 mt-0.5 mr-1'
+              role='img'
+              aria-label='読書時間のアイコン'
             >
               <path
                 strokeLinecap='round'

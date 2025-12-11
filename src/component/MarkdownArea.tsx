@@ -1,5 +1,5 @@
 import { load } from 'cheerio'
-import hljs, { HighlightResult } from 'highlight.js'
+import hljs, { type HighlightResult } from 'highlight.js'
 
 const MarkdownArea = ({ body }: { body: string }) => {
   const $ = load(body)

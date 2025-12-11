@@ -10,6 +10,7 @@ const TopButton = () => {
   return (
     <div className='fixed bottom-0 right-0 p-6'>
       <button
+        type='button'
         className='inline-flex p-3 w-12 h-12 rounded-full bg-gray-3 items-center justify-center'
         onClick={() => scrollToTop()}
       >

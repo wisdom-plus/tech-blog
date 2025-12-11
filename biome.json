@@ -5,7 +5,22 @@
   "formatter": { "enabled": true, "indentStyle": "tab" },
   "linter": {
     "enabled": true,
-    "rules": { "recommended": true },
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noUnknownAtRules": {
+          "level": "error",
+          "options": {
+            "ignore": ["tailwind", "apply", "variants", "responsive", "screen"]
+          }
+        }
+      },
+      "complexity": {
+        "noImportantStyles": {
+          "level": "off"
+        }
+      }
+    },
     "includes": ["**", "!node_modules/**"]
   },
   "javascript": { "formatter": { "quoteStyle": "double" } },

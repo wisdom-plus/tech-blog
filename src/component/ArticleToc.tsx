@@ -29,7 +29,7 @@ const ArticleToc = ({ body }: { body: string }) => {
             <Link
               href={`#${data.id}`}
               key={data.id}
-              className={`text-left mb-2 p-1 hover:bg-gray-5` + ` ${typography(data.rank)}`}
+              className={`text-left mb-2 p-1 hover:bg-gray-5 ${typography(data.rank)}`}
             >
               <div className=''>{data.text}</div>
             </Link>

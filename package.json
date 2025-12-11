@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "npm exec biome lint",
-    "lint:fix": "npm exec biome lint --fix",
+    "lint:fix": "npm exec biome lint --write",
     "format": "npm exec biome format"
   },
   "dependencies": {

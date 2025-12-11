@@ -28,11 +28,12 @@ const Breadcrumb = ({ title }: Props) => {
         <li>
           <Link href='/'>Top</Link>
         </li>
-        {paths.map((path, index) => (
-          <li key={index}>
-            {index === paths.length - 1 ? path : <Link href={`/${path}`}>{path}</Link>}
-          </li>
-        ))}
+        {paths.map((path, index) => {
+          const href = `/${paths.slice(0, index + 1).join('/')}`
+          const isLast = index === paths.length - 1
+
+          return <li key={href}>{isLast ? path : <Link href={href}>{path}</Link>}</li>
+        })}
       </ul>
     </div>
   )

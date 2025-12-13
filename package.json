@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "npm exec biome lint",
     "lint:fix": "npm exec biome lint --write",
-    "format": "npm exec biome format"
+    "format": "biome format ."
   },
   "dependencies": {
     "@types/node": "24.0.15",

@@ -5,27 +5,27 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'images.microcms-assets.io',
-        port: '',
-        pathname: '/assets/*/**',
+        protocol: "https",
+        hostname: "images.microcms-assets.io",
+        port: "",
+        pathname: "/assets/*/**",
       },
     ],
     localPatterns: [
       {
-        pathname: '/logo.png',
+        pathname: "/logo.png",
       },
       {
-        pathname: '/logo-black.png',
+        pathname: "/logo-black.png",
       },
       {
-        pathname: '/logo-white.png',
+        pathname: "/logo-white.png",
       },
       {
-        pathname: '/card/*.png',
+        pathname: "/card/*.png",
       },
     ],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

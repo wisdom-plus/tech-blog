@@ -1,15 +1,14 @@
 {
   "name": "tech-blog",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "npm exec biome lint",
-    "lint:fix": "npm exec biome lint --write",
-    "format": "biome format ."
+    "lint": "biome check",
+    "format": "biome format --write"
   },
   "dependencies": {
     "@types/node": "24.0.15",

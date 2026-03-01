@@ -19,5 +19,5 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [require("rippleui"), require("@tailwindcss/typography")],
+  plugins: [require("@wisdom_plus/namiui"), require("@tailwindcss/typography")],
 };

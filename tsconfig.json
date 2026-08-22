@@ -30,7 +30,8 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "types": ["gtag.js"]
   },
   "include": [
     "next-env.d.ts",
